@@ -1,6 +1,9 @@
-N = int(input())
-numbers = [int(input()) for i in range(N)]
-numbers.sort()
+import sys
+input = sys.stdin.readline
 
-for num in numbers:
-    print(num)
+a = int(input())
+n = [int(input()) for _ in range(a)]
+n.sort()
+
+for i in n:
+    print(i)
