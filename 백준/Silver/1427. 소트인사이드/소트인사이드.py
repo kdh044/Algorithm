@@ -1,7 +1,7 @@
 import sys
 
 
-A = list(input().strip())
+A = list(input())
 
 for i in range(len(A)):
     Max = i
