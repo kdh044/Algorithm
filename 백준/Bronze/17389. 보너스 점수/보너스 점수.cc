@@ -1,26 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    int n;
+int main() {
+    int n, score = 0, bonus = 0;
     string s;
-    cin >> n;
-    cin >> s;
-    int a = 0;
-    int sum = 0;
-    int bonus = 0;
-    for (char c : s){
-        a++;
-        if (c == 'X')
-        {
+    cin >> n >> s;
+
+    for (int i = 1; i < n + 1; i++) {
+        if (s[i - 1] == 'O') {
+            score += (i + bonus);
+            bonus++;
+        } else {
             bonus = 0;
         }
-        else
-        {
-            sum += a + bonus;
-            bonus++;
-        }       
     }
-        cout << sum;
-        return 0;
-    }
+    cout << score;
+    return 0;
+}
