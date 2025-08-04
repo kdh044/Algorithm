@@ -5,19 +5,16 @@ int main(void){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int a,b,c;
-    cin >> a >> b >> c;
+    int a[3];
+    cin >> a[0] >> a[1] >> a[2];
+    sort(a, a+3);
     
-    if (a == b and b == c){
-        cout << 10000 + 1000 * b;
+    if(a[0] == a[2]){
+        cout << a[0] * 1000 + 10000;
     }
-    else if (a == b or a == c){
-        cout << 1000 + a * 100;
+    else if (a[0] == a[1] or a[1] == a[2]){
+        cout << a[1] * 100 + 1000;
     }
-    else if (b == c){
-        cout << 1000 + b * 100;
-    }
-    else{
-        cout << max({a,b,c}) * 100;
-    }
+    else
+        cout << a[2] * 100;
 }
