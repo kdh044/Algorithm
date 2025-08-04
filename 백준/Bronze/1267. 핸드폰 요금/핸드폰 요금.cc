@@ -5,25 +5,17 @@ int main(void){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int number, time[20] , Y[20] , M[20];
-    int Y_sum = 0 , M_sum = 0;
-    
-    cin >> number;
-    for(int i = 0; i < number; i++) cin >> time[i];
-    
-    for(int i = 0; i < number; i++) Y[i] = time[i] / 30 + 1;
-    
-    for(int i = 0; i < number; i++) Y_sum += Y[i] * 10;
-    
-    for(int i = 0; i < number; i++) M[i] = time[i] / 60 + 1;
-    
-    for(int i = 0; i < number; i++) M_sum += (M[i]) * 15;
-        
-    if(M_sum > Y_sum) cout << "Y" << " " << Y_sum;
-    
-    else if(M_sum < Y_sum) cout << "M" << " " <<M_sum;
-    
-    else cout << "Y M " << M_sum;
-  
-    
+    int N, Y, M;
+    cin >> N;
+    vector<int> phone(N);
+    Y = 0;
+    M = 0;
+    for (int i = 0; i < N; i++) cin >> phone[i];
+    for (int i = 0; i < N; i++){
+        Y += (phone[i]/30 + 1) * 10;
+        M += (phone[i]/60 + 1) * 15;
+    }
+    if (Y < M) cout << "Y " << Y;
+    else if(M < Y) cout << "M " << M;
+    else cout << "Y M " << M;
 }
