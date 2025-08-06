@@ -7,17 +7,18 @@ int main() {
   
   int N, a[10] = {}, ans = 0;
   cin >> N;
+    
+  while(N) {
+      a[N % 10]++;
+      N /= 10;
+  } 
   
-  while(N){
-    a[N%10]++;
-    N /= 10;
-  }
-   
   for(int i = 0; i < 10; i++){
       if(i == 6 or i == 9) continue;
-      ans = max(ans, a[i]);
+      ans = max(ans,a[i]);
   }
-  ans = max(ans, (a[6] + a[9] + 1) /2);
+  
+  ans = max(ans,(a[6]+a[9]+1)/2);
   cout << ans;
+    
 }
-                
