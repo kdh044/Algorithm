@@ -1,47 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(void){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    
-    string str;
-    int n , a;
-    queue <int> Q;
-    
-    cin >> n;
-    while(n--){
-        cin >> str;
-        if(str == "push"){
-           cin >> a;
-           Q.push(a);
-        }
-        else if(str == "pop"){
-            if (Q.empty()){
-                cout << -1 <<"\n";
-            }
-            else{
-                cout << Q.front() << "\n"; 
-                Q.pop();
-            }
-        }
-        else if(str == "size"){
-            cout << Q.size() << "\n";
-        }
-        else if(str == "empty"){
-            cout << Q.empty() << "\n";
-         }
-        else if(str == "front"){
-            if (Q.empty()){
-                cout << -1 << "\n";
-            }
-            else cout << Q.front() << "\n";
-        }
-        else {
-            if(Q.empty()){
-                cout << -1 << "\n";
-            }
-            else cout << Q.back() << "\n";
-        }
+int N, s, e, i;
+int q[2000005];
+
+int main() {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+
+  cin >> N;
+  while(N--){
+    string com;
+    cin >> com;
+    if(com == "push"){
+      cin >> q[e++];
+    } else if(com == "pop"){
+      cout << (s == e ? -1 : q[s++]) << '\n';
+    } else if(com == "size"){
+      cout << e - s << '\n';
+    } else if(com == "empty"){
+      cout << (s == e) << '\n';
+    } else if(com == "front"){
+      cout << (s == e ? -1 : q[s]) << '\n';
+    } else if(com == "back"){
+      cout << (s == e ? -1 : q[e-1]) << '\n';
     }
+  }
 }
