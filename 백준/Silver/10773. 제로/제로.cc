@@ -7,16 +7,20 @@ int main(void){
     
     int n;
     cin >> n;
-    vector <int> arr;
+    stack <int> arr;
     while(n--){
         int x;
         cin >> x;
         
-        if(x == 0) arr.pop_back();
-        else arr.push_back(x);
+        if(x == 0) arr.pop();
+        else arr.push(x);
     }
-    long long res = 0;
-    for(auto i : arr) res += i;
+    int res = 0;
+    
+    while(!arr.empty()){
+        res += arr.top();
+        arr.pop();
+    }
     
     cout << res;
 }
