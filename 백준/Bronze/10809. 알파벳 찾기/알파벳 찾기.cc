@@ -14,10 +14,9 @@ int main(void){
     for (int i = 0; i < s.size(); ++i){
         char c = s[i];
     
-    if ('a' <= c && c <= 'z'){
         int idx = c - 'a';
         if (pos[idx] == -1) pos[idx] = i;  
-    }
+        
 }
 
     for (int i = 0; i < 26; ++i){
