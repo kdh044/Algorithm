@@ -2,35 +2,34 @@
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
-    while (true) {
-        string s;
-        getline(cin, s);
-        if (s == ".") break;
-
-        deque<char> st;
-        bool isValid = true;
-
-        for (char c : s) {
-            if (c == '(' or c == '[' or c == '{') {
-                st.push_back(c);
-            } else if (c == ')' or c == ']' or c == '}') {
-                if (st.empty()) { isValid = false; break; }
-                char t = st.back();
-                if ((c == ')' and t != '(') ||
-                    (c == ']' and t != '[') ||
-                    (c == '}' and t != '{')) {
-                    isValid = false; break;
-                }
-                st.pop_back();
-            }
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+    
+  while(true){
+    string a;
+    getline(cin, a);
+    if(a == ".") break;
+    stack<char> s;
+    bool isValid = true;
+    for(auto c : a){
+      if(c == '(' or c == '[') s.push(c);
+      else if(c == ')'){
+        if(s.empty() or s.top() != '('){
+          isValid = false;
+          break;
         }
-
-        if (!st.empty()) isValid = false;
-
-        cout << (isValid ? "yes" : "no") << '\n';
+        s.pop();
+      }
+      else if(c == ']'){
+        if(s.empty() or s.top() != '['){
+          isValid = false;
+          break;
+        }
+        s.pop();
+      }
     }
-    return 0;
+    if(!s.empty()) isValid = false;
+    if(isValid) cout << "yes\n";
+    else cout << "no\n";
+  }
 }
