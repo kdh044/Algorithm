@@ -1,21 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(void){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
-    vector <int> a;
-    for(int i = 0; i < n; i++){
-        int x;
-        cin >> x;
-        a.push_back(x);
+    vector<int> a(n);  // 크기 미리 지정해서 push_back 안 씀
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    sort(a.begin(),a.end(),greater<int>());
-    
-    for (auto c : a){
-        cout << c << "\n";
+
+    // 내림차순 정렬
+    sort(a.begin(), a.end(), greater<int>());
+
+    // 출력
+    for (int x : a) {
+        cout << x << '\n';
     }
 }
