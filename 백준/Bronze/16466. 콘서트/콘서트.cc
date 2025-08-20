@@ -5,25 +5,26 @@ int main(void){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int a;
-    cin >> a;
-    vector <int> b;
+    int n;
+    cin >> n;
     
-    for(int i = 0; i < a; i++){
-        int c;
-        cin >> c;
-        b.push_back(c);
+    vector<int> tickets(n);
+    for (int i = 0; i < n; i++) {
+        cin >> tickets[i];
     }
-    
-    sort(b.begin(),b.end());
-    
-    if (b[0] != 1){
-        cout << 1; return 0;
-    }
-    
-    for(int i = 0; i < a ; i++){
-        if (b[i] + 1 != b[i+1]){
-            cout << b[i] + 1; break;
+
+    sort(tickets.begin(), tickets.end());
+
+    int smallest_available_ticket = 1;
+
+    for (int sold_ticket : tickets) {
+        if (sold_ticket == smallest_available_ticket) {
+            smallest_available_ticket++;
+        }
+        else if (sold_ticket > smallest_available_ticket) {
+            break;
         }
     }
+
+    cout << smallest_available_ticket << "\n";
 }
