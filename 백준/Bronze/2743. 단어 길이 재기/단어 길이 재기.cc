@@ -8,7 +8,5 @@ int main(void){
     
     cin >> s;
     
-    int a = 0;
-    for(auto c : s) a++;
-    cout << a;
+    cout << s.size();
 }
