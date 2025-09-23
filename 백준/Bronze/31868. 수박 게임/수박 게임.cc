@@ -8,7 +8,7 @@ int main(void){
     int n, k;
     
     cin >> n >> k;
-    int fruit[n + 2] = {};
+    int fruit[n + 2];
     fruit[1] = k;
     for(int i = 2; i < n + 1; i++){
         fruit[i] = fruit[i - 1] / 2;
