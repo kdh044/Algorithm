@@ -8,10 +8,8 @@ char board[MAX][MAX * 2 - 1];
 void fill_star(int x, int y){
     board[x][y] = '*';
     board[x + 1][y - 1] = '*', board[x + 1][y + 1] = '*';
-    
-    for(int i = y - 2; i <= y + 2; i++){
-        board[x + 2][i] = '*';
-    }
+   
+    for(int k = 0; k < 5; k ++)  board[x + 2][y - 2 + k] = '*';
 }
 
 void func(int s, int x,int y){
