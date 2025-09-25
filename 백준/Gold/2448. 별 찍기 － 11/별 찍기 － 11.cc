@@ -5,7 +5,7 @@ const int MAX = 1024 * 3 + 2;
 int n;
 char board[MAX][MAX * 2 - 1];
 
-void fill_star(const int& x, const int &y){
+void fill_star(int x, int y){
     board[x][y] = '*';
     board[x + 1][y - 1] = '*', board[x + 1][y + 1] = '*';
     
@@ -14,7 +14,7 @@ void fill_star(const int& x, const int &y){
     }
 }
 
-void func(const int&s, const int& x, const int& y){
+void func(int s, int x,int y){
     if(s == 3){
         fill_star(x,y);
         return;
