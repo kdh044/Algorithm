@@ -1,15 +1,15 @@
 def solution(clothes):
-    count = {}
-
-    for name, category in clothes:
-        if category not in count:
-            count[category] = 0
-
-        count[category] += 1
-
+    c_dict = {}
+    
+    for _ , c in clothes:
+        if c in c_dict:
+            c_dict[c] += 1
+        else:
+            c_dict[c] = 1
+            
     answer = 1
-
-    for clothing_count in count.values():
-        answer *= clothing_count + 1
-
-    return answer - 1
+    
+    for count in c_dict.values():
+        answer *= count + 1
+    
+    return answer - 1 
