@@ -1,29 +1,31 @@
 def solution(genres, plays):
     answer = []
 
-    song = {}
-    genre_songs = {}
+    dic1 = {}
+    dic2 = {}
 
-    for i in range(len(genres)):
-        genre = genres[i]
-        play = plays[i]
+    for i, (g, p) in enumerate(zip(genres, plays)):
 
-        if genre in song:
-            song[genre] += play
+        # 장르별 노래 저장
+        if g not in dic1:
+            dic1[g] = [(i, p)]
         else:
-            song[genre] = play
+            dic1[g].append((i, p))
 
-        if genre in genre_songs:
-            genre_songs[genre].append((play, i))
+        # 장르별 총 재생수
+        if g not in dic2:
+            dic2[g] = p
         else:
-            genre_songs[genre] = [(play, i)]
+            dic2[g] += p
 
-    genres_sorted = sorted(song, key=song.get, reverse=True)
+    # 총 재생수가 많은 장르부터
+    for k, v in sorted(dic2.items(), key=lambda x: x[1], reverse=True):
 
-    for genre in genres_sorted:
-        songs = sorted(genre_songs[genre], key=lambda x: (-x[0], x[1]))
+        # 재생수가 많은 노래부터, 같으면 고유번호가 작은 순서
+        songs = sorted(dic1[k], key=lambda x: (-x[1], x[0]))
 
-        for s in songs[:2]:
-            answer.append(s[1])
+        # 최대 2개
+        for i, p in songs[:2]:
+            answer.append(i)
 
     return answer
