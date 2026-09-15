@@ -2,24 +2,18 @@ import math
 
 def solution(progresses, speeds):
     days = []
-
-    for progress, speed in zip(progresses, speeds):
-        day = math.ceil((100 - progress) / speed)
-        days.append(day)
-
+    for progress, speed in zip(progresses,speeds):
+        days.append(math.ceil((100-progress)/speed))
+    
     answer = []
-
     current = days[0]
-    count = 1
-
+    stack = 1
     for day in days[1:]:
         if day <= current:
-            count += 1
+            stack += 1
         else:
-            answer.append(count)
-            current = day
-            count = 1
-
-    answer.append(count)
-
+            answer.append(stack)
+            stack, current = 1 , day     
+                    
+    answer.append(stack)
     return answer
