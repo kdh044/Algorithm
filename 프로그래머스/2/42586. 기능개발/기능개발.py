@@ -1,11 +1,14 @@
+import math
+
 def solution(progresses, speeds):
     days = []
 
     for progress, speed in zip(progresses, speeds):
-        day = (100 - progress + speed - 1) // speed
+        day = math.ceil((100 - progress) / speed)
         days.append(day)
 
     answer = []
+
     current = days[0]
     count = 1
 
