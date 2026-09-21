@@ -5,11 +5,11 @@ def solution(priorities, location):
     answer = 0
     
     while queue:
-        index, now = queue.popleft()
-        
-        if queue and now < max(p for i, p in queue):
-            queue.append((index,now))
+        index, prior = queue.popleft()
+        if queue and prior < max(p for i,p in queue):
+            queue.append((index,prior))
         else:
             answer += 1
+            
             if index == location:
                 return answer
