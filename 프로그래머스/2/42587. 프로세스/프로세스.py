@@ -1,15 +1,15 @@
 from collections import deque
 
 def solution(priorities, location):
-    queue = deque((i, p) for i, p in enumerate(priorities))
+    queue = deque(enumerate(priorities))
     answer = 0
-
+    
     while queue:
-        cur = queue.popleft()
-
-        if any(cur[1] < q[1] for q in queue):
-            queue.append(cur)
+        index, now = queue.popleft()
+        
+        if queue and now < max(p for i, p in queue):
+            queue.append((index,now))
         else:
             answer += 1
-            if cur[0] == location:
+            if index == location:
                 return answer
