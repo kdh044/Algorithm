@@ -1,15 +1,13 @@
-from itertools import product
-
 def solution(numbers, target):
-    answer = 0
+    result = [0]
 
-    for signs in product([1, -1], repeat=len(numbers)):
-        total = 0
+    for num in numbers:
+        temp = []
 
-        for num, sign in zip(numbers, signs):
-            total += num * sign
+        for x in result:
+            temp.append(x + num)
+            temp.append(x - num)
 
-        if total == target:
-            answer += 1
+        result = temp
 
-    return answer
+    return result.count(target)
