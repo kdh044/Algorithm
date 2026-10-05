@@ -4,11 +4,11 @@
 
 ## 전체 현황
 
-![2%](https://progress-bar.xyz/2/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![4%](https://progress-bar.xyz/3/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
-| [03장 그리디](#03%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94) | ![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
+| [03장 그리디](#03%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
@@ -28,13 +28,13 @@
 
 ## 03장 그리디
 
-![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
+![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 3-1 | 큰 수의 법칙 | 2019 국가 교육기관 코딩 테스트 | ✅ | [정답 코드](03%EC%9E%A5%20%EA%B7%B8%EB%A6%AC%EB%94%94/3-1.%20%ED%81%B0%20%EC%88%98%EC%9D%98%20%EB%B2%95%EC%B9%99/%ED%81%B0%20%EC%88%98%EC%9D%98%20%EB%B2%95%EC%B9%99.py) |
 | 3-2 | 숫자 카드 게임 | 2019 국가 교육기관 코딩 테스트 | ✅ | [정답 코드](03%EC%9E%A5%20%EA%B7%B8%EB%A6%AC%EB%94%94/3-2.%20%EC%88%AB%EC%9E%90%20%EC%B9%B4%EB%93%9C%20%EA%B2%8C%EC%9E%84/%EC%88%AB%EC%9E%90%20%EC%B9%B4%EB%93%9C%20%EA%B2%8C%EC%9E%84.py) |
-| 3-3 | 1이 될 때까지 | 2018 E 기업 알고리즘 대회 | | |
+| 3-3 | 1이 될 때까지 | 2018 E 기업 알고리즘 대회 | ✅ | [정답 코드](03%EC%9E%A5%20%EA%B7%B8%EB%A6%AC%EB%94%94/3-3.%201%EC%9D%B4%20%EB%90%A0%20%EB%95%8C%EA%B9%8C%EC%A7%80/1%EC%9D%B4%20%EB%90%A0%20%EB%95%8C%EA%B9%8C%EC%A7%80.py) |
 
 ## 04장 구현
 
