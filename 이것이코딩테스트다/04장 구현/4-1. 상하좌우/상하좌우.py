@@ -1,30 +1,21 @@
 import sys
 input = sys.stdin.readline
 
-R = [0,1]
-D = [1,0]
-L = [0,-1]
-U = [-1,0]
-
 n = int(input())
-direction = list(map(str,input().split()))
 
-position = [1,1]
+x,y = 1, 1
+plans = input().split()
 
-for direct in direction:
-    if direct == 'R':
-        move = R
-    elif direct == 'D':
-        move = D
-    elif direct == 'L':
-        move = L
-    else:
-        move = U
+dx = [0,0,-1,1]
+dy = [-1,1,0,0]
+move_types = ["L","R","U","D"]
 
-    next_position = [
-        position[0] + move[0],position[1] + move[1]
-    ]
-    if 1 <= next_position[0] <= n and 1 <= next_position[1] <= n:
-        position = next_position
-
-print(*position)
+for plan in plans:
+    for i in range(4):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+    if 1 <= nx <= n and 1 <= ny <= n:
+        x,y = nx, ny
+        
+print(x,y)
