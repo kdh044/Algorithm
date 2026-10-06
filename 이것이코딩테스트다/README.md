@@ -4,12 +4,12 @@
 
 ## 전체 현황
 
-![5%](https://progress-bar.xyz/4/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![7%](https://progress-bar.xyz/5/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
 | [03장 그리디](#03%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
-| [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![25%](https://progress-bar.xyz/1/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
+| [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![50%](https://progress-bar.xyz/2/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
@@ -38,12 +38,12 @@
 
 ## 04장 구현
 
-![25%](https://progress-bar.xyz/1/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
+![50%](https://progress-bar.xyz/2/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 4-1 | 상하좌우 | - | ✅ | [정답 코드](04%EC%9E%A5%20%EA%B5%AC%ED%98%84/4-1.%20%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0.py) |
-| 4-2 | 시각 | - | | |
+| 4-2 | 시각 | - | ✅ | [정답 코드](04%EC%9E%A5%20%EA%B5%AC%ED%98%84/4-2.%20%EC%8B%9C%EA%B0%81/%EC%8B%9C%EA%B0%81.py) |
 | 4-3 | 왕실의 나이트 | - | | |
 | 4-4 | 게임 개발 | - | | |
 
