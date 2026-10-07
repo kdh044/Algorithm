@@ -2,8 +2,8 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
+student = [input().split() for _ in range(n)]
 
-students = [input().split() for _ in range(n)]
-students.sort(key=lambda x: int(x[1]))
+student.sort(key = lambda x: int(x[1]))
 
-print(*[student[0] for student in students])
+print(*[student[i][0] for i in range(n)])
