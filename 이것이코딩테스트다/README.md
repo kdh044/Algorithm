@@ -4,13 +4,13 @@
 
 ## 전체 현황
 
-![9%](https://progress-bar.xyz/7/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![11%](https://progress-bar.xyz/8/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
 | [03장 그리디](#03%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![100%](https://progress-bar.xyz/4/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
-| [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
+| [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![50%](https://progress-bar.xyz/1/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
@@ -49,11 +49,11 @@
 
 ## 05장 DFS/BFS
 
-![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=500&color=babaca&suffix=/2)
+![50%](https://progress-bar.xyz/1/?scale=2&title=progress&width=500&color=babaca&suffix=/2)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
-| 5-1 | 음료수 얼려 먹기 | - | | |
+| 5-1 | 음료수 얼려 먹기 | - | ✅ | [정답 코드](05%EC%9E%A5%20DFSBFS/5-1.%20%EC%9D%8C%EB%A3%8C%EC%88%98%20%EC%96%BC%EB%A0%A4%20%EB%A8%B9%EA%B8%B0/%EC%9D%8C%EB%A3%8C%EC%88%98%20%EC%96%BC%EB%A0%A4%20%EB%A8%B9%EA%B8%B0.py) |
 | 5-2 | 미로 탈출 | - | | |
 
 ## 06장 정렬
