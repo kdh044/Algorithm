@@ -4,14 +4,14 @@
 
 ## 전체 현황
 
-![14%](https://progress-bar.xyz/10/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![15%](https://progress-bar.xyz/11/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
 | [03장 그리디](#03%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![100%](https://progress-bar.xyz/4/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
-| [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![33%](https://progress-bar.xyz/1/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
+| [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
@@ -58,12 +58,12 @@
 
 ## 06장 정렬
 
-![33%](https://progress-bar.xyz/1/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
+![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 6-1 | 위에서 아래로 | T 기업 코딩 테스트 | ✅ | [정답 코드](06%EC%9E%A5%20%EC%A0%95%EB%A0%AC/6-1.%20%EC%9C%84%EC%97%90%EC%84%9C%20%EC%95%84%EB%9E%98%EB%A1%9C/%EC%9C%84%EC%97%90%EC%84%9C%20%EC%95%84%EB%9E%98%EB%A1%9C.py) |
-| 6-2 | 성적이 낮은 순서로 학생 출력하기 | D 기업 프로그래밍 콘테스트 예선 | | |
+| 6-2 | 성적이 낮은 순서로 학생 출력하기 | D 기업 프로그래밍 콘테스트 예선 | ✅ | [정답 코드](06%EC%9E%A5%20%EC%A0%95%EB%A0%AC/6-2.%20%EC%84%B1%EC%A0%81%EC%9D%B4%20%EB%82%AE%EC%9D%80%20%EC%88%9C%EC%84%9C%EB%A1%9C%20%ED%95%99%EC%83%9D%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/%EC%84%B1%EC%A0%81%EC%9D%B4%20%EB%82%AE%EC%9D%80%20%EC%88%9C%EC%84%9C%EB%A1%9C%20%ED%95%99%EC%83%9D%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.py) |
 | 6-3 | 두 배열의 원소 교체 | 국제 알고리즘 대회 | | |
 
 ## 07장 이진 탐색
