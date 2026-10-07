@@ -3,9 +3,7 @@ input = sys.stdin.readline
 
 n = int(input())
 
-grade = {
-    name: int(num)
-    for name, num in (input().split() for _ in range(n))
-}
+students = [input().split() for _ in range(n)]
+students.sort(key=lambda x: int(x[1]))
 
-print(*sorted(grade, key=grade.get))
+print(*[student[0] for student in students])
