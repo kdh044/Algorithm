@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![16%](https://progress-bar.xyz/12/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![18%](https://progress-bar.xyz/13/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -12,7 +12,7 @@
 | [04장 구현](#04%EC%9E%A5-%EA%B5%AC%ED%98%84) | ![100%](https://progress-bar.xyz/4/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
-| [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
+| [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![50%](https://progress-bar.xyz/1/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
@@ -68,11 +68,11 @@
 
 ## 07장 이진 탐색
 
-![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=500&color=babaca&suffix=/2)
+![50%](https://progress-bar.xyz/1/?scale=2&title=progress&width=500&color=babaca&suffix=/2)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
-| 7-1 | 부품 찾기 | - | | |
+| 7-1 | 부품 찾기 | - | ✅ | [정답 코드](07%EC%9E%A5%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89/7-1.%20%EB%B6%80%ED%92%88%20%EC%B0%BE%EA%B8%B0/%EB%B6%80%ED%92%88%20%EC%B0%BE%EA%B8%B0.py) |
 | 7-2 | 떡볶이 떡 만들기 | - | | |
 
 ## 08장 다이나믹 프로그래밍
