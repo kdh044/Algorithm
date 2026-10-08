@@ -2,13 +2,13 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-item = set(map(int,input().split()))
+item = set(input().split())
 
 m = int(input())
-order = list(map(int,input().split()))
+order = list(input().split())
 
 for x in order:
     if x in item:
-        print("yes", end=" ")
+        print("yes", end = ' ')
     else:
-        print("no", end=" ")
+        print("no", end = ' ')
