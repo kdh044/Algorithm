@@ -8,6 +8,4 @@ def solution(n, m, coins):
         for j in range(coins[i], m + 1):
             d[j] = min(d[j], d[j - coins[i]] + 1)
 
-    if d[m] == math.inf:
-        return -1
-    return d[m]
+    return  -1 if d[m] == math.inf else d[m]
