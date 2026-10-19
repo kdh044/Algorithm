@@ -49,6 +49,6 @@
     }
   ],
   "func": "solution",
-  "signature": "def solution(n, m, row, col, direction, board):",
+  "signature": "def solution(n, m, a, b, d, board):",
   "interfaceVersion": 2
 }

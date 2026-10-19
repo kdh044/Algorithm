@@ -75,6 +75,6 @@
     }
   ],
   "func": "solution",
-  "signature": "def solution(n, numbers, operators):",
+  "signature": "def solution(n, a, operators):",
   "interfaceVersion": 2
 }

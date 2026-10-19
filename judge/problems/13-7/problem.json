@@ -126,6 +126,6 @@
     }
   ],
   "func": "solution",
-  "signature": "def solution(n, l, r, population):",
+  "signature": "def solution(n, l, r, a):",
   "interfaceVersion": 2
 }

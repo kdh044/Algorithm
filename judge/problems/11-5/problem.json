@@ -44,6 +44,6 @@
     }
   ],
   "func": "solution",
-  "signature": "def solution(n, m, weights):",
+  "signature": "def solution(n, m, k):",
   "interfaceVersion": 2
 }
