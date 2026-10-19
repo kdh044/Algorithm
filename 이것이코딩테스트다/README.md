@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![22%](https://progress-bar.xyz/16/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![23%](https://progress-bar.xyz/17/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -13,7 +13,7 @@
 | [05장 DFS/BFS](#05%EC%9E%A5-dfsbfs) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [06장 정렬](#06%EC%9E%A5-%EC%A0%95%EB%A0%AC) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
-| [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![50%](https://progress-bar.xyz/2/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
+| [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![75%](https://progress-bar.xyz/3/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
@@ -77,13 +77,13 @@
 
 ## 08장 다이나믹 프로그래밍
 
-![50%](https://progress-bar.xyz/2/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
+![75%](https://progress-bar.xyz/3/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 8-1 | 1로 만들기 | - | ✅ | [정답 코드](08%EC%9E%A5%20%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/8-1.%201%EB%A1%9C%20%EB%A7%8C%EB%93%A4%EA%B8%B0/1%EB%A1%9C%20%EB%A7%8C%EB%93%A4%EA%B8%B0.py) |
 | 8-2 | 개미 전사 | - | ✅ | [정답 코드](08%EC%9E%A5%20%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/8-2.%20%EA%B0%9C%EB%AF%B8%20%EC%A0%84%EC%82%AC/%EA%B0%9C%EB%AF%B8%20%EC%A0%84%EC%82%AC.py) |
-| 8-3 | 바닥 공사 | - | | |
+| 8-3 | 바닥 공사 | - | ✅ | [정답 코드](08%EC%9E%A5%20%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/8-3.%20%EB%B0%94%EB%8B%A5%20%EA%B3%B5%EC%82%AC/%EB%B0%94%EB%8B%A5%20%EA%B3%B5%EC%82%AC.py) |
 | 8-4 | 효율적인 화폐 구성 | - | | |
 
 ## 09장 최단 경로
