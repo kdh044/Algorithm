@@ -1,0 +1,57 @@
+{
+  "id": "14-3",
+  "chapter": 14,
+  "chapterName": "정렬 문제",
+  "title": "실패율",
+  "type": "function",
+  "func": "solution",
+  "signature": "def solution(N, stages):",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "2019 카카오 신입 공채 1차",
+  "link": "https://programmers.co.kr/learn/courses/30/lessons/42889",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          2,
+          1,
+          2,
+          6,
+          2,
+          4,
+          3,
+          3
+        ]
+      ],
+      "expected": [
+        3,
+        4,
+        2,
+        1,
+        5
+      ]
+    },
+    {
+      "args": [
+        4,
+        [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      ],
+      "expected": [
+        4,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "12-2",
+  "chapter": 12,
+  "chapterName": "구현 문제",
+  "title": "문자열 재정렬",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "Facebook 인터뷰",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        "K1KA5CB7"
+      ],
+      "expected": "ABCKK13"
+    },
+    {
+      "args": [
+        "AJKDLSI412K4JSJ9D"
+      ],
+      "expected": "ADDIJJJKKLSS20"
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(s):",
+  "interfaceVersion": 2
+}

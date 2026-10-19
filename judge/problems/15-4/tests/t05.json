@@ -1,0 +1,1 @@
+{"args": [["aaaa", "aaaaa"], ["aaa?", "aaaa?", "aaaaa?", "?aaaaaa"]], "expected": [1, 1, 0, 0]}

@@ -1,0 +1,20 @@
+{
+  "id": "13-4",
+  "chapter": 13,
+  "chapterName": "DFS/BFS 문제",
+  "title": "괄호 변환",
+  "type": "function",
+  "func": "solution",
+  "signature": "def solution(p):",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "2020 카카오 신입 공채 1차",
+  "link": "https://programmers.co.kr/learn/courses/30/lessons/60058",
+  "samples": [
+    {"args": ["(()())()"], "expected": "(()())()"},
+    {"args": [")("], "expected": "()"},
+    {"args": ["()))((()"], "expected": "()(())()"}
+  ]
+}

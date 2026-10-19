@@ -1,0 +1,72 @@
+{
+  "id": "13-3",
+  "chapter": 13,
+  "chapterName": "DFS/BFS 문제",
+  "title": "경쟁적 전염",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 256,
+  "difficulty": "2",
+  "solveMinutes": 50,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/18405",
+  "samples": [
+    {
+      "args": [
+        3,
+        3,
+        [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0
+          ]
+        ],
+        2,
+        3,
+        2
+      ],
+      "expected": 3
+    },
+    {
+      "args": [
+        3,
+        3,
+        [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0
+          ]
+        ],
+        1,
+        2,
+        2
+      ],
+      "expected": 0
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, k, board, s, x, y):",
+  "interfaceVersion": 2
+}

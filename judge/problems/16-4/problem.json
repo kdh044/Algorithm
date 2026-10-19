@@ -1,0 +1,33 @@
+{
+  "id": "16-4",
+  "chapter": 16,
+  "chapterName": "다이나믹 프로그래밍 문제",
+  "title": "병사 배치하기",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 256,
+  "difficulty": "1.5",
+  "solveMinutes": 40,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/18353",
+  "samples": [
+    {
+      "args": [
+        7,
+        [
+          15,
+          11,
+          4,
+          8,
+          5,
+          2,
+          4
+        ]
+      ],
+      "expected": 2
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, soldiers):",
+  "interfaceVersion": 2
+}

@@ -1,0 +1,51 @@
+{
+  "id": "16-2",
+  "chapter": 16,
+  "chapterName": "다이나믹 프로그래밍 문제",
+  "title": "정수 삼각형",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "1.5",
+  "solveMinutes": 30,
+  "source": "IOI 1994년도",
+  "link": "https://www.acmicpc.net/problem/1932",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          [
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            8,
+            1,
+            0
+          ],
+          [
+            2,
+            7,
+            4,
+            4
+          ],
+          [
+            4,
+            5,
+            2,
+            6,
+            5
+          ]
+        ]
+      ],
+      "expected": 30
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, triangle):",
+  "interfaceVersion": 2
+}

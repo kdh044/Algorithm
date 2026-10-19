@@ -1,0 +1,1 @@
+{"args": [["abc", "bbc", "cbc", "abd"], ["?bc", "??c", "??d", "?bd"]], "expected": [3, 3, 1, 1]}

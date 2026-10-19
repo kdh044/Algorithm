@@ -1,0 +1,30 @@
+{
+  "id": "12-1",
+  "chapter": 12,
+  "chapterName": "구현 문제",
+  "title": "럭키 스트레이트",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 256,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/18406",
+  "samples": [
+    {
+      "args": [
+        123402
+      ],
+      "expected": "LUCKY"
+    },
+    {
+      "args": [
+        7755
+      ],
+      "expected": "READY"
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n):",
+  "interfaceVersion": 2
+}

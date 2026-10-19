@@ -1,0 +1,18 @@
+{
+  "id": "11-6",
+  "chapter": 11,
+  "chapterName": "그리디 문제",
+  "title": "무지의 먹방 라이브",
+  "type": "function",
+  "func": "solution",
+  "signature": "def solution(food_times, k):",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 30,
+  "source": "2019 카카오 신입 공채",
+  "link": "https://programmers.co.kr/learn/courses/30/lessons/42891",
+  "samples": [
+    {"args": [[3, 1, 2], 5], "expected": 1}
+  ]
+}

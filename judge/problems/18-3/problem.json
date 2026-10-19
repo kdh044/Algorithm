@@ -1,0 +1,82 @@
+{
+  "id": "18-3",
+  "chapter": 18,
+  "chapterName": "그래프 이론 문제",
+  "title": "어두운 길",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "2",
+  "solveMinutes": 40,
+  "source": "University of Ulm Local Contest",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        7,
+        11,
+        [
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            9
+          ],
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            15
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            8
+          ],
+          [
+            4,
+            6,
+            9
+          ],
+          [
+            5,
+            6,
+            11
+          ]
+        ]
+      ],
+      "expected": 51
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, roads):",
+  "interfaceVersion": 2
+}

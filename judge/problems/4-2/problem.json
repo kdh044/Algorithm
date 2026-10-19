@@ -1,0 +1,24 @@
+{
+  "id": "4-2",
+  "chapter": 4,
+  "chapterName": "구현",
+  "title": "시각",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 15,
+  "source": "",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5
+      ],
+      "expected": 11475
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n):",
+  "interfaceVersion": 2
+}

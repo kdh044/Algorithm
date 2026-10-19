@@ -1,0 +1,22 @@
+{
+  "id": "12-3",
+  "chapter": 12,
+  "chapterName": "구현 문제",
+  "title": "문자열 압축",
+  "type": "function",
+  "func": "solution",
+  "signature": "def solution(s):",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1.5",
+  "solveMinutes": 30,
+  "source": "2020 카카오 신입 공채",
+  "link": "https://programmers.co.kr/learn/courses/30/lessons/60057",
+  "samples": [
+    {"args": ["aabbaccc"], "expected": 7},
+    {"args": ["ababcdcdababcdcd"], "expected": 9},
+    {"args": ["abcabcdede"], "expected": 8},
+    {"args": ["abcabcabcabcdededededede"], "expected": 14},
+    {"args": ["xababcdcdababcdcd"], "expected": 17}
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "13-5",
+  "chapter": 13,
+  "chapterName": "DFS/BFS 문제",
+  "title": "연산자 끼워 넣기",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 512,
+  "difficulty": "2",
+  "solveMinutes": 30,
+  "source": "삼성전자 SW 역량테스트",
+  "link": "https://www.acmicpc.net/problem/14888",
+  "samples": [
+    {
+      "args": [
+        2,
+        [
+          5,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "expected": [
+        30,
+        30
+      ]
+    },
+    {
+      "args": [
+        3,
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "expected": [
+        35,
+        17
+      ]
+    },
+    {
+      "args": [
+        6,
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "expected": [
+        54,
+        -24
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, numbers, operators):",
+  "interfaceVersion": 2
+}

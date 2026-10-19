@@ -1,0 +1,63 @@
+{
+  "id": "3-2",
+  "chapter": 3,
+  "chapterName": "그리디",
+  "title": "숫자 카드 게임",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": null,
+  "source": "2019 국가 교육기관 코딩 테스트",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        3,
+        3,
+        [
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            4,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "expected": 2
+    },
+    {
+      "args": [
+        2,
+        4,
+        [
+          [
+            7,
+            3,
+            1,
+            8
+          ],
+          [
+            3,
+            3,
+            3,
+            4
+          ]
+        ]
+      ],
+      "expected": 3
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, cards):",
+  "interfaceVersion": 2
+}

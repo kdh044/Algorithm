@@ -1,0 +1,67 @@
+{
+  "id": "5-2",
+  "chapter": 5,
+  "chapterName": "DFS/BFS",
+  "title": "미로 탈출",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1.5",
+  "solveMinutes": 30,
+  "source": "",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        6,
+        [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "expected": 10
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, maze):",
+  "interfaceVersion": 2
+}

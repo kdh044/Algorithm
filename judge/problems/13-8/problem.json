@@ -1,0 +1,59 @@
+{
+  "id": "13-8",
+  "chapter": 13,
+  "chapterName": "DFS/BFS 문제",
+  "title": "블록 이동하기",
+  "type": "function",
+  "func": "solution",
+  "signature": "def solution(board):",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "3",
+  "solveMinutes": 50,
+  "source": "2020 카카오 신입 공채 1차",
+  "link": "https://programmers.co.kr/learn/courses/30/lessons/60063",
+  "samples": [
+    {
+      "args": [
+        [
+          [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "expected": 7
+    }
+  ]
+}

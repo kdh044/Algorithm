@@ -1,0 +1,32 @@
+{
+  "id": "15-3",
+  "chapter": 15,
+  "chapterName": "이진 탐색 문제",
+  "title": "공유기 설치",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "2",
+  "solveMinutes": 50,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/2110",
+  "samples": [
+    {
+      "args": [
+        5,
+        3,
+        [
+          1,
+          2,
+          8,
+          4,
+          9
+        ]
+      ],
+      "expected": 3
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, c, houses):",
+  "interfaceVersion": 2
+}

@@ -1,0 +1,96 @@
+{
+  "id": "19-1",
+  "chapter": 19,
+  "chapterName": "2020년 상반기 삼성전자 기출문제",
+  "title": "아기 상어",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 512,
+  "difficulty": "2",
+  "solveMinutes": 50,
+  "source": "삼성전자 공채",
+  "link": "https://www.acmicpc.net/problem/16236",
+  "samples": [
+    {
+      "args": [
+        3,
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ]
+        ]
+      ],
+      "expected": 0
+    },
+    {
+      "args": [
+        3,
+        [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ]
+        ]
+      ],
+      "expected": 3
+    },
+    {
+      "args": [
+        4,
+        [
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      ],
+      "expected": 14
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, board):",
+  "interfaceVersion": 2
+}

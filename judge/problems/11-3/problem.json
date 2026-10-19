@@ -1,0 +1,24 @@
+{
+  "id": "11-3",
+  "chapter": 11,
+  "chapterName": "그리디 문제",
+  "title": "문자열 뒤집기",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/1439",
+  "samples": [
+    {
+      "args": [
+        "0001100"
+      ],
+      "expected": 1
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(s):",
+  "interfaceVersion": 2
+}

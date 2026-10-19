@@ -1,0 +1,52 @@
+{
+  "id": "10-3",
+  "chapter": 10,
+  "chapterName": "그래프 이론",
+  "title": "커리큘럼",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "3",
+  "solveMinutes": 50,
+  "source": "핵심 유형",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          [
+            10
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ],
+      "expected": [
+        10,
+        20,
+        14,
+        18,
+        17
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, courses):",
+  "interfaceVersion": 2
+}

@@ -1,0 +1,29 @@
+{
+  "id": "14-4",
+  "chapter": 14,
+  "chapterName": "정렬 문제",
+  "title": "카드 정렬하기",
+  "type": "function",
+  "timeLimit": 2,
+  "memoryLimit": 128,
+  "difficulty": "2",
+  "solveMinutes": 30,
+  "source": "핵심 유형",
+  "link": "https://www.acmicpc.net/problem/1715",
+  "samples": [
+    {
+      "args": [
+        3,
+        [
+          10,
+          20,
+          40
+        ]
+      ],
+      "expected": 100
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, cards):",
+  "interfaceVersion": 2
+}

@@ -1,0 +1,49 @@
+{
+  "id": "11-5",
+  "chapter": 11,
+  "chapterName": "그리디 문제",
+  "title": "볼링공 고르기",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 30,
+  "source": "2019 SW 마에스트로 입학 테스트",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        3,
+        [
+          1,
+          3,
+          2,
+          3,
+          2
+        ]
+      ],
+      "expected": 8
+    },
+    {
+      "args": [
+        8,
+        5,
+        [
+          1,
+          5,
+          4,
+          3,
+          2,
+          4,
+          5,
+          2
+        ]
+      ],
+      "expected": 25
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, weights):",
+  "interfaceVersion": 2
+}

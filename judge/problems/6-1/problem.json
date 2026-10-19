@@ -1,0 +1,33 @@
+{
+  "id": "6-1",
+  "chapter": 6,
+  "chapterName": "정렬",
+  "title": "위에서 아래로",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 15,
+  "source": "T 기업 코딩 테스트",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        3,
+        [
+          15,
+          27,
+          12
+        ]
+      ],
+      "expected": [
+        27,
+        15,
+        12
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, numbers):",
+  "interfaceVersion": 2
+}

@@ -1,0 +1,35 @@
+{
+  "id": "4-1",
+  "chapter": 4,
+  "chapterName": "구현",
+  "title": "상하좌우",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 15,
+  "source": "",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          "R",
+          "R",
+          "R",
+          "U",
+          "D",
+          "D"
+        ]
+      ],
+      "expected": [
+        3,
+        4
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, moves):",
+  "interfaceVersion": 2
+}

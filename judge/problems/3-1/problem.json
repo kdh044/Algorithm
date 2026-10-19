@@ -1,0 +1,33 @@
+{
+  "id": "3-1",
+  "chapter": 3,
+  "chapterName": "그리디",
+  "title": "큰 수의 법칙",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 30,
+  "source": "2019 국가 교육기관 코딩 테스트",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        8,
+        3,
+        [
+          2,
+          4,
+          5,
+          4,
+          6
+        ]
+      ],
+      "expected": 46
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, k, numbers):",
+  "interfaceVersion": 2
+}

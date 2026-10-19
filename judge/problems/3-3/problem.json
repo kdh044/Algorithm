@@ -1,0 +1,25 @@
+{
+  "id": "3-3",
+  "chapter": 3,
+  "chapterName": "그리디",
+  "title": "1이 될 때까지",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": null,
+  "source": "2018 E 기업 알고리즘 대회",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        25,
+        5
+      ],
+      "expected": 2
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, k):",
+  "interfaceVersion": 2
+}

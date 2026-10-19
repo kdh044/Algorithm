@@ -1,0 +1,31 @@
+{
+  "id": "11-4",
+  "chapter": 11,
+  "chapterName": "그리디 문제",
+  "title": "만들 수 없는 금액",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 30,
+  "source": "K 대회 기출",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          3,
+          2,
+          1,
+          1,
+          9
+        ]
+      ],
+      "expected": 8
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, coins):",
+  "interfaceVersion": 2
+}

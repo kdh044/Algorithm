@@ -1,0 +1,1 @@
+{"args": [["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?"]], "expected": [3, 2, 4, 1, 0]}

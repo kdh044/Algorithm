@@ -1,0 +1,41 @@
+{
+  "id": "7-1",
+  "chapter": 7,
+  "chapterName": "이진 탐색",
+  "title": "부품 찾기",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1.5",
+  "solveMinutes": 30,
+  "source": "",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        [
+          8,
+          3,
+          7,
+          9,
+          2
+        ],
+        3,
+        [
+          5,
+          7,
+          9
+        ]
+      ],
+      "expected": [
+        "no",
+        "yes",
+        "yes"
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, parts, m, requests):",
+  "interfaceVersion": 2
+}

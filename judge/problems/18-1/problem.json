@@ -1,0 +1,68 @@
+{
+  "id": "18-1",
+  "chapter": 18,
+  "chapterName": "그래프 이론 문제",
+  "title": "여행 계획",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "2",
+  "solveMinutes": 40,
+  "source": "핵심 유형",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        5,
+        4,
+        [
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          3,
+          4,
+          3
+        ]
+      ],
+      "expected": "YES"
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, m, connections, plan):",
+  "interfaceVersion": 2
+}

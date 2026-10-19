@@ -1,0 +1,37 @@
+{
+  "id": "6-2",
+  "chapter": 6,
+  "chapterName": "정렬",
+  "title": "성적이 낮은 순서로 학생 출력하기",
+  "type": "function",
+  "timeLimit": 1,
+  "memoryLimit": 128,
+  "difficulty": "1",
+  "solveMinutes": 20,
+  "source": "D 기업 프로그래밍 콘테스트 예선",
+  "link": "",
+  "samples": [
+    {
+      "args": [
+        2,
+        [
+          [
+            "홍길동",
+            95
+          ],
+          [
+            "이순신",
+            77
+          ]
+        ]
+      ],
+      "expected": [
+        "이순신",
+        "홍길동"
+      ]
+    }
+  ],
+  "func": "solution",
+  "signature": "def solution(n, students):",
+  "interfaceVersion": 2
+}

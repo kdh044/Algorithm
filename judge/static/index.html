@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이코테 Judge</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* VS Code Light Modern */
+  --title:#f8f8f8; --activity:#f8f8f8; --side:#f8f8f8; --editor:#ffffff; --panel:#f8f8f8;
+  --tab:#f8f8f8; --tab-on:#ffffff; --line:#e5e5e5; --line2:#cecece; --hover:#f2f2f2; --select:#e4e6f1;
+  --text:#3b3b3b; --bright:#1f1f1f; --dim:#616161; --faint:#8b8b8b;
+  --accent:#005fb8; --accent-hi:#0258a8; --focus:#005fb8; --status:#f8f8f8;
+  --ac:#16825d; --wa:#e51400; --tle:#bf8803; --re:#af00db;
+  --chip:#f0f0f0; --input:#ffffff; --code:#f3f3f3;
+  --mono:Consolas,"Courier New","D2Coding",monospace;
+  --sans:"Pretendard Variable",Pretendard,"Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--editor);color:var(--text);font:15px/1.6 var(--sans);overflow:hidden}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-thumb{background:#79797966;border:3px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:#646464b3;background-clip:content-box;border:3px solid transparent}
+::-webkit-scrollbar-corner{background:transparent}
+
+.app{display:grid;grid-template-rows:38px 1fr 24px;height:100vh}
+/* 타이틀바 */
+.titlebar{display:flex;align-items:center;gap:12px;padding:0 10px 0 14px;background:var(--title);border-bottom:1px solid var(--line);font-size:13px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--bright)}
+.brand i{width:18px;height:18px;border-radius:4px;background:linear-gradient(135deg,#0078d4,#4ec9b0);display:inline-block}
+.crumb{color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crumb b{color:var(--text);font-weight:500}
+.grow{flex:1}
+.exambar{display:flex;gap:4px}
+.exambar button{padding:3px 12px;border-radius:4px;background:var(--chip);border:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.exambar button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.exambar button.done::after{content:" ✓";color:var(--ac)}
+.exambar button.on.done::after{color:#fff}
+.timer{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim)}
+.timer b{font:600 14px var(--mono);color:var(--bright);padding:2px 10px;border-radius:4px;background:var(--chip);border:1px solid var(--line);min-width:76px;text-align:center}
+.timer.warn b{color:#fff;background:var(--tle);border-color:var(--tle)}
+.timer.over b{color:#fff;background:#c72e0f;border-color:#c72e0f}
+.tbtn{padding:4px 12px;border-radius:4px;font-size:12.5px;border:1px solid var(--line2)}
+.tbtn:hover{background:var(--hover)}
+.tbtn.danger{border-color:#c72e0f;color:#c72e0f}
+
+/* 본문 */
+.body{display:grid;grid-template-columns:48px 280px minmax(0,1fr);min-height:0}
+.body.noside{grid-template-columns:48px 0 minmax(0,1fr)}
+.activity{background:var(--activity);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.act{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--faint);border-left:2px solid transparent;position:relative}
+.act:hover{color:var(--bright)}
+.act.on{color:var(--bright);border-left-color:var(--accent)}
+.act svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.act[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:52px;top:12px;background:#fff;box-shadow:0 2px 8px #0002;border:1px solid var(--line2);padding:3px 8px;border-radius:4px;font-size:12px;color:var(--text);white-space:nowrap;z-index:9}
+
+/* 사이드바 */
+.side{background:var(--side);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.side h6{margin:0;padding:10px 20px 6px;font:600 11px var(--sans);letter-spacing:.06em;color:var(--dim);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.side h6 span{font-weight:500;letter-spacing:0}
+.search{padding:4px 12px 10px}
+.search input{width:100%;background:var(--input);border:1px solid var(--line2);border-radius:4px;padding:5px 9px;color:var(--text);font:13.5px var(--sans);outline:none}
+.search input:focus{border-color:var(--focus)}
+.overall{padding:0 20px 10px;font-size:12px;color:var(--dim)}
+.meter{height:4px;background:#e5e5e5;border-radius:2px;overflow:hidden;margin-top:5px}
+.meter i{display:block;height:100%;background:var(--ac);width:0;transition:width .4s}
+.tree{overflow:auto;flex:1;padding-bottom:20px;font-size:14px}
+.folder{display:flex;align-items:center;gap:4px;height:26px;padding:0 10px 0 8px;cursor:pointer;color:var(--text);user-select:none}
+.folder:hover{background:var(--hover)}
+.chev{width:16px;text-align:center;color:var(--dim);font-size:10px;transition:transform .12s}
+.folder.closed .chev{transform:rotate(-90deg)}
+.folder .name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.folder .cnt{font-size:11.5px;color:var(--faint);font-family:var(--mono)}
+.folder .cnt.full{color:var(--ac)}
+.file{display:flex;align-items:center;gap:8px;height:26px;padding:0 12px 0 34px;cursor:pointer;border:1px solid transparent}
+.file:hover{background:var(--hover)}
+.file.on{background:var(--select);border-color:var(--focus)}
+.file .fid{font:12px var(--mono);color:var(--faint);min-width:34px}
+.file .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file .st{font-size:12px;width:14px;text-align:center}
+.st.ok{color:var(--ac)} .st.try{color:var(--tle)}
+.badge{font:600 10px var(--sans);padding:0 5px;border-radius:3px;background:#dbeafe;color:#005fb8;line-height:16px}
+
+/* 워크스페이스 */
+.ws{display:grid;grid-template-columns:minmax(300px,var(--left,46%)) 4px minmax(360px,1fr);min-height:0;min-width:0}
+.pane{display:flex;flex-direction:column;min-height:0;min-width:0;background:var(--editor)}
+.pane-head{height:36px;display:flex;align-items:stretch;background:var(--tab);border-bottom:1px solid var(--line);flex-shrink:0}
+.tabx{display:flex;align-items:center;gap:7px;padding:0 16px;font-size:13px;color:var(--dim);border-right:1px solid var(--line);white-space:nowrap}
+.tabx.on{background:var(--tab-on);color:var(--bright);box-shadow:inset 0 1px 0 var(--accent);margin-bottom:-1px}
+.tabx .ic{font-size:12px}
+.py{color:#3572a5;font:700 11px var(--mono)}
+.md-ic{color:#3572a5;font:700 11px var(--mono)}
+.pane-head .grow{border-bottom:0}
+.vgutter{background:var(--line);cursor:col-resize;position:relative}
+.vgutter:hover,.vgutter.drag{background:var(--focus)}
+
+/* 문제 설명 */
+.prob{overflow:auto;padding:26px 32px 80px;font-size:16px;line-height:1.8}
+.prob .empty{color:var(--faint);text-align:center;margin-top:30vh;font-size:15px}
+.ph{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.ph .num{font:500 14px var(--mono);color:var(--faint)}
+.ph h1{font-size:24px;font-weight:700;margin:0;color:var(--bright);letter-spacing:-.02em}
+.ph .solved{font-size:13px;color:var(--ac);border:1px solid #9fd5c1;background:#effaf5;border-radius:999px;padding:0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.chip{font-size:12.5px;padding:3px 10px;border-radius:4px;background:var(--chip);color:var(--dim);line-height:1.6}
+.chip b{color:var(--text);font-weight:600;margin-left:4px}
+.chip a{color:var(--accent);text-decoration:none}
+.stars{color:#d18616;letter-spacing:1px}
+.stars .half{position:relative;display:inline-block;letter-spacing:0;margin-right:1px}
+.stars .half::before{content:"★";position:absolute;left:0;top:0;width:50%;overflow:hidden}
+.md{color:var(--text)}
+.md p{margin:0 0 14px}
+.md h2{font-size:17px;color:var(--bright);margin:30px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line2)}
+.md h3{font-size:16px;color:var(--bright);margin:22px 0 8px}
+.md ul,.md ol{padding-left:22px;margin:0 0 14px}
+.md li{margin:3px 0}
+.md strong{color:var(--bright)}
+.md code{font:0.88em var(--mono);background:var(--code);color:#a31515;padding:1px 6px;border-radius:4px}
+.md pre{background:#f8f8f8;border:1px solid var(--line2);border-radius:6px;padding:14px 16px;overflow:auto;line-height:1.55}
+.md pre code{background:none;color:#1f1f1f;padding:0;font-size:14.5px}
+.md table{border-collapse:collapse;margin:0 0 14px;font-size:15px}
+.md th,.md td{border:1px solid var(--line2);padding:6px 12px}
+.md th{background:#f3f3f3}
+.md blockquote{margin:0 0 14px;padding:4px 16px;border-left:3px solid var(--accent);background:#f3f6fa;color:var(--dim)}
+.md img{display:block;max-width:100%;margin:12px auto 18px;background:#fff;cursor:zoom-in}
+.md img + em,.md p > em:only-child{display:block;text-align:center;color:var(--faint);font-size:13.5px;margin-top:-8px}
+.sec{font-size:17px;color:var(--bright);margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line2);font-weight:600}
+.samples{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.sample .lbl{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim);margin-bottom:6px}
+.sample pre{margin:0;font:14px/1.55 var(--mono);background:#f8f8f8;border:1px solid var(--line2);border-radius:6px;padding:12px 14px;overflow:auto;max-height:300px;color:#1f1f1f}
+.copy{font-size:12px;color:var(--accent);padding:0 4px}
+.copy:hover{text-decoration:underline}
+.hist{width:100%;border-collapse:collapse;font-size:14px}
+.hist td,.hist th{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+.hist th{color:var(--dim);font-weight:500;font-size:12.5px}
+
+/* 에디터 영역 */
+.right{display:grid;grid-template-rows:36px minmax(120px,1fr) 4px var(--panelH,260px);min-height:0}
+.hgutter{background:var(--line);cursor:row-resize}
+.hgutter:hover,.hgutter.drag{background:var(--focus)}
+.editor{min-height:0;overflow:hidden;background:var(--editor)}
+.CodeMirror{height:100%;font:15px/1.6 var(--mono);font-variant-ligatures:none;background:var(--editor);color:#000000}
+.CodeMirror-gutters{background:var(--editor);border-right:0}
+.CodeMirror-linenumber{color:#6e7681;padding:0 14px 0 8px}
+.CodeMirror-activeline-background{background:transparent;box-shadow:inset 0 0 0 2px #eeeeee}
+.CodeMirror-activeline .CodeMirror-linenumber{color:#171184}
+.CodeMirror-cursor{border-left:2px solid #000}
+.CodeMirror-selected,.CodeMirror-focused .CodeMirror-selected{background:#add6ff!important}
+.CodeMirror-matchingbracket{color:inherit!important;outline:1px solid #b9b9b9;background:#0064001a}
+.cm-keyword{color:#af00db}
+.cm-storage,.cm-atom{color:#0000ff}
+.cm-def,.cm-fn,.cm-builtin,.cm-meta{color:#795e26}
+.cm-type{color:#267f99}
+.cm-variable,.cm-variable-2,.cm-property{color:#001080}
+.cm-variable-3{color:#267f99}
+.cm-string,.cm-string-2{color:#a31515}
+.cm-number{color:#098658}
+.cm-comment{color:#008000;font-style:normal}
+.cm-operator,.cm-punctuation{color:#000000}
+.cm-error{color:#e51400;background:none}
+#fallback{width:100%;height:100%;background:var(--editor);color:var(--text);border:0;padding:12px;font:15px/1.6 var(--mono);resize:none;outline:none}
+
+/* 하단 패널 */
+.panel{display:flex;flex-direction:column;background:var(--panel);min-height:0;border-top:1px solid var(--line)}
+.ptabs{display:flex;align-items:center;gap:2px;height:36px;padding:0 8px 0 12px;flex-shrink:0}
+.ptab{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);padding:8px 10px;border-bottom:1px solid transparent}
+.ptab:hover{color:var(--text)}
+.ptab.on{color:var(--bright);border-bottom-color:var(--bright)}
+.pbody{flex:1;overflow:auto;padding:6px 18px 14px;font-size:14px;min-height:0}
+.actions{display:flex;gap:8px;align-items:center;padding:8px 12px;border-top:1px solid var(--line);flex-shrink:0}
+.kbd{font-size:12px;color:var(--faint)}
+.kbd kbd{font:11px var(--mono);background:#fff;border:1px solid var(--line2);border-bottom-width:2px;border-radius:3px;padding:0 4px;color:var(--dim)}
+.btn{padding:6px 16px;border-radius:4px;font-size:13.5px;background:#fff;border:1px solid var(--line2);color:var(--text)}
+.btn:hover{background:var(--hover)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.btn.primary:hover{background:var(--accent-hi)}
+.btn:disabled{opacity:.5;cursor:default}
+.muted{color:var(--faint)}
+.verdict{font-size:18px;font-weight:700;margin:6px 0 10px;display:flex;align-items:center;gap:10px}
+.verdict small{font-size:13px;font-weight:400;color:var(--dim)}
+.v-AC{color:var(--ac)} .v-WA{color:var(--wa)} .v-TLE{color:var(--tle)} .v-RE{color:var(--re)}
+.cases{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.case{font:12px var(--mono);padding:2px 8px;border-radius:3px;background:#fff;border:1px solid var(--line);cursor:pointer}
+.case.on{border-color:var(--text)}
+.case.AC{color:var(--ac)} .case.WA{color:var(--wa);background:#fdecea} .case.TLE{color:var(--tle);background:#fdf6e3} .case.RE{color:var(--re);background:#f8ecfb}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.out-lbl{font-size:12px;color:var(--dim);margin:4px 0}
+.detail pre{font:13px/1.5 var(--mono);background:#fff;border:1px solid var(--line2);border-radius:4px;padding:8px 10px;margin:0 0 8px;max-height:160px;overflow:auto;white-space:pre-wrap;color:#1f1f1f}
+.detail pre.err{color:#e51400}
+.gitline{margin-top:8px;font-size:13px;color:var(--dim)}
+.gitline.ok{color:var(--ac)} .gitline.err{color:var(--wa)}
+textarea.custom{width:100%;height:90px;background:#fff;color:var(--text);border:1px solid var(--line2);border-radius:4px;font:13px var(--mono);padding:8px;outline:none;resize:vertical}
+textarea.custom:focus{border-color:var(--focus)}
+.spinner{display:inline-block;width:13px;height:13px;border:2px solid #d0d0d0;border-top-color:var(--accent);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px;margin-right:8px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* 상태 표시줄 */
+.statusbar{display:flex;align-items:center;background:var(--status);color:var(--text);font-size:12px;padding:0 6px;border-top:1px solid var(--line)}
+.statusbar span{padding:0 8px;height:24px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.statusbar span:first-child{background:var(--accent);color:#fff;margin-left:-6px;padding:0 10px}
+.statusbar .git-err{background:#c72e0f;color:#fff}
+
+/* 모달 */
+.modal{position:fixed;inset:0;background:#0004;display:flex;align-items:center;justify-content:center;z-index:50}
+.modal[hidden]{display:none}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;width:min(460px,92vw);box-shadow:0 10px 40px #0003}
+.card h2{margin:0 0 16px;font-size:18px;color:var(--bright)}
+.card label{display:block;margin:12px 0 5px;color:var(--dim);font-size:13px}
+.card select,.card input[type=number]{width:100%;background:#fff;color:var(--text);border:1px solid var(--line2);border-radius:4px;padding:7px 9px;font:inherit;font-size:14px;outline:none}
+.card .row{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+.card table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.card td{padding:6px 4px;border-bottom:1px solid var(--line2)}
+.zoom{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;z-index:60;cursor:zoom-out}
+.zoom img{max-width:94vw;max-height:94vh;background:#fff;border-radius:6px;padding:12px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="titlebar">
+    <div class="brand"><i></i>이코테 Judge</div>
+    <div class="crumb" id="crumb"></div>
+    <div class="exambar" id="examBar" hidden></div>
+    <div class="grow"></div>
+    <div class="timer" id="timerBox"><span id="timerLabel">풀이 시간</span><b id="timer">00:00</b></div>
+    <button class="tbtn" id="examBtn">모의고사</button>
+  </div>
+
+  <div class="body" id="body">
+    <nav class="activity">
+      <button class="act on" id="actList" data-tip="문제 목록 (Ctrl+B)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+      <button class="act" id="actRand" data-tip="안 푼 문제 랜덤"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="15" r="1.2" fill="currentColor"/></svg></button>
+      <button class="act" id="actExam" data-tip="모의고사"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></button>
+    </nav>
+
+    <aside class="side" id="side">
+      <h6>문제 목록 <span id="sideCount"></span></h6>
+      <div class="search"><input id="q" placeholder="검색 (제목, 번호)"></div>
+      <div class="overall"><span id="progText">-</span><div class="meter"><i id="barFill"></i></div></div>
+      <div class="tree" id="tree"></div>
+    </aside>
+
+    <main class="ws" id="ws">
+      <section class="pane">
+        <div class="pane-head"><div class="tabx on"><span class="md-ic">M↓</span><span>문제 설명</span></div><div class="grow"></div></div>
+        <div class="prob" id="prob"><div class="empty">왼쪽 목록에서 문제를 선택하세요</div></div>
+      </section>
+      <div class="vgutter" id="vgutter"></div>
+      <section class="right" id="right">
+        <div class="pane-head"><div class="tabx on"><span class="py">py</span><span id="fileName">solution.py</span><span class="muted" id="dirty"></span></div><div class="grow"></div></div>
+        <div class="editor" id="editorWrap"></div>
+        <div class="hgutter" id="hgutter"></div>
+        <div class="panel">
+          <div class="ptabs">
+            <button class="ptab on" data-tab="result">실행 결과</button>
+            <button class="ptab" data-tab="custom">직접 입력</button>
+            <button class="ptab" data-tab="history">제출 기록</button>
+          </div>
+          <div class="pbody" id="pbody"></div>
+          <div class="actions">
+            <span class="kbd"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> 코드 실행 · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> 제출</span>
+            <div class="grow"></div>
+            <button class="btn" id="resetBtn">초기화</button>
+            <button class="btn" id="runBtn">코드 실행</button>
+            <button class="btn primary" id="submitBtn">제출 후 채점하기</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="statusbar">
+    <span id="sbInterp">⚙ PyPy3</span>
+    <span id="sbGit">⎇ main</span>
+    <div class="grow"></div>
+    <span id="sbSaved"></span>
+    <span id="sbPos">줄 1, 열 1</span>
+    <span>공백: 4</span>
+    <span>UTF-8</span>
+    <span id="sbSolved"></span>
+  </footer>
+</div>
+
+<div class="modal" id="examModal" hidden>
+  <div class="card">
+    <h2>모의고사</h2>
+    <label>범위</label>
+    <select id="exRange">
+      <option value="part3">Part 3 기출문제 (11~19장)</option>
+      <option value="part2">Part 2 실전문제 (3~10장)</option>
+      <option value="all">전체</option>
+    </select>
+    <label>문제 수</label>
+    <input id="exCount" type="number" min="1" max="10" value="4">
+    <label>제한 시간 (분)</label>
+    <input id="exMin" type="number" min="10" max="600" value="150">
+    <label style="display:flex;gap:8px;align-items:center;color:var(--text)"><input id="exUnsolved" type="checkbox" checked> 안 푼 문제 우선</label>
+    <div class="row"><button class="btn" id="exCancel">취소</button><button class="btn primary" id="exStart">시작</button></div>
+  </div>
+</div>
+<div class="modal" id="examEnd" hidden><div class="card" id="examEndCard"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const api = (p, body) => fetch(p, body === undefined ? {} : {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)}).then(r => r.json());
+const LS = {get(k,d){try{return JSON.parse(localStorage.getItem(k)) ?? d}catch{return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const VNAME = {AC:"맞았습니다!!", WA:"틀렸습니다", TLE:"시간 초과", RE:"런타임 에러"};
+
+let problems = [], cur = null, editor = null, saveTimer = null, exam = LS.get("exam", null);
+let lastJob = null, tab = "result";
+const closed = new Set(LS.get("closedCh", []));
+
+// ---------- 에디터 ----------
+function defineVscMode(){
+  // VS Code Light+ 처럼: def/class/None 등은 파랑, 내장 타입은 청록, 함수 호출은 갈색
+  const STORAGE = new Set(["def","class","lambda","None","True","False","and","or","not","in","is","global","nonlocal"]);
+  const TYPES = new Set(["int","str","float","list","dict","set","tuple","bool","bytes","object","type","range","map","filter","zip","enumerate","reversed","frozenset","deque","defaultdict","Counter"]);
+  CodeMirror.defineMode("python-vsc", config => {
+    const base = CodeMirror.getMode(config, {name:"python", version:3});
+    return Object.assign({}, base, {
+      token(stream, state){
+        const t = base.token(stream, state), w = stream.current();
+        if (t === "keyword" && STORAGE.has(w)) return "storage";
+        if (t === "builtin" && TYPES.has(w)) return "type";
+        if ((t === "variable" || t === "property") && stream.match(/^\s*\(/, false)) return "fn";
+        return t;
+      }
+    });
+  });
+}
+function initEditor(){
+  if (window.CodeMirror){
+    defineVscMode();
+    editor = CodeMirror($("#editorWrap"), {mode:"python-vsc", lineNumbers:true, indentUnit:4, tabSize:4,
+      indentWithTabs:false, matchBrackets:true, autoCloseBrackets:true, styleActiveLine:true,
+      extraKeys:{Tab:cm => cm.somethingSelected() ? cm.indentSelection("add") : cm.replaceSelection("    "),
+                 "Shift-Tab":cm => cm.indentSelection("subtract"), "Ctrl-/":"toggleComment"}});
+    editor.on("change", scheduleSave);
+    editor.on("cursorActivity", () => { const c = editor.getCursor(); $("#sbPos").textContent = `줄 ${c.line+1}, 열 ${c.ch+1}`; });
+  } else {
+    const ta = document.createElement("textarea"); ta.id = "fallback"; $("#editorWrap").appendChild(ta);
+    editor = {getValue:() => ta.value, setValue:v => ta.value = v, focus:() => ta.focus(), refresh(){}};
+    ta.addEventListener("input", scheduleSave);
+    ta.addEventListener("keydown", e => { if (e.key === "Tab"){ e.preventDefault(); document.execCommand("insertText", false, "    "); }});
+  }
+}
+function template(p){
+  if (p.type === "function") return (p.signature || "def solution():") + "\n    answer = 0\n    return answer\n";
+  return "def solution():\n    answer = 0\n    return answer\n";
+}
+function scheduleSave(){
+  if (!cur) return;
+  $("#dirty").textContent = "●";
+  clearTimeout(saveTimer);
+  const id = cur.id, code = editor.getValue();
+  saveTimer = setTimeout(() => api(`/api/draft/${id}`, {code}).then(() => { $("#dirty").textContent = ""; $("#sbSaved").textContent = "✓ 자동 저장됨"; }), 600);
+}
+
+// ---------- 목록 ----------
+async function loadList(){
+  problems = await api("/api/problems");
+  const solved = problems.filter(p => p.solved).length;
+  $("#progText").textContent = `${solved} / ${problems.length} 해결 (${problems.length ? Math.round(solved / problems.length * 100) : 0}%)`;
+  $("#barFill").style.width = (problems.length ? solved / problems.length * 100 : 0) + "%";
+  $("#sbSolved").textContent = `✓ ${solved}/${problems.length}`;
+  $("#sideCount").textContent = problems.length + "문제";
+  renderList();
+}
+function renderList(){
+  const q = $("#q").value.trim().toLowerCase();
+  const groups = {};
+  for (const p of problems){
+    if (q && !(p.title.toLowerCase().includes(q) || p.id.includes(q))) continue;
+    (groups[p.chapter] ??= {name:p.chapterName, items:[]}).items.push(p);
+  }
+  $("#tree").innerHTML = Object.entries(groups).sort((a,b) => a[0]-b[0]).map(([ch, g]) => {
+    const done = g.items.filter(p => p.solved).length;
+    const isClosed = closed.has(ch) && !q;
+    return `<div class="folder ${isClosed ? "closed" : ""}" data-ch="${ch}"><span class="chev">▼</span><span class="name">${ch}장 ${esc(g.name)}</span><span class="cnt ${done === g.items.length ? "full" : ""}">${done}/${g.items.length}</span></div>` +
+      (isClosed ? "" : g.items.map(p => `<div class="file ${cur && cur.id === p.id ? "on" : ""}" data-id="${p.id}" title="${esc(p.title)}">
+        <span class="fid">${p.id}</span><span class="t">${esc(p.title)}</span>
+        ${p.type === "function" ? '<span class="badge">함수</span>' : ""}
+        <span class="st ${p.solved ? "ok" : p.attempts ? "try" : ""}">${p.solved ? "✓" : p.attempts ? "●" : ""}</span></div>`).join(""));
+  }).join("") || '<div class="muted" style="padding:20px">검색 결과가 없습니다</div>';
+}
+$("#tree").addEventListener("click", e => {
+  const f = e.target.closest(".folder");
+  if (f){ const ch = f.dataset.ch; closed.has(ch) ? closed.delete(ch) : closed.add(ch); LS.set("closedCh", [...closed]); renderList(); return; }
+  const it = e.target.closest(".file"); if (it) openProblem(it.dataset.id);
+});
+$("#q").addEventListener("input", renderList);
+function toggleSide(){ $("#body").classList.toggle("noside"); $("#actList").classList.toggle("on"); setTimeout(() => editor.refresh(), 0); }
+$("#actList").onclick = toggleSide;
+$("#actRand").onclick = () => { const pool = problems.filter(p => !p.solved); const p = pool[Math.floor(Math.random()*pool.length)]; if (p) openProblem(p.id); };
+
+// ---------- 문제 ----------
+async function openProblem(id){
+  if (cur) { clearTimeout(saveTimer); await api(`/api/draft/${cur.id}`, {code: editor.getValue()}); }
+  cur = await api(`/api/problem/${id}`);
+  history.replaceState(null, "", "#" + id);
+  LS.set("last", id);
+  renderList();
+  const fn = cur.type === "function";
+  const d = +cur.difficulty;
+  const stars = d ? `<span class="stars">${[0, 1, 2].map(i => d >= i + 1 ? "★" : d > i ? '<span class="half">☆</span>' : "☆").join("")}</span>` : "-";
+  const samples = (cur.samples || []).map((s, i) => {
+    const names = (cur.signature || "").slice((cur.signature || "").indexOf("(") + 1).split(")")[0].split(",").map(x => x.trim());
+    const inp = fn ? s.args.map((a, j) => `${names[j] || 'arg' + (j + 1)} = ${JSON.stringify(a)}`).join("\n") : s.input;
+    const out = fn ? JSON.stringify(s.expected) : s.output;
+    return `<div class="sample"><div class="lbl">${fn ? "매개변수" : "입력"} 예시 ${i+1}<button class="copy" data-copy="${esc(inp)}">복사</button></div><pre>${esc(inp)}</pre></div>
+            <div class="sample"><div class="lbl">${fn ? "반환값" : "출력"} 예시 ${i+1}</div><pre>${esc(out)}</pre></div>`;
+  }).join("");
+  const md = window.marked ? marked.parse(cur.statement) : `<pre>${esc(cur.statement)}</pre>`;
+  $("#prob").innerHTML = `
+    <div class="ph"><span class="num">${esc(cur.id)}</span><h1>${esc(cur.title)}</h1>${cur.status.solved ? '<span class="solved">✓ 해결</span>' : ""}</div>
+    <div class="chips">
+      <span class="chip">난이도 ${stars}</span>
+      <span class="chip">풀이 시간<b>${cur.solveMinutes ? cur.solveMinutes + "분" : "-"}</b></span>
+      <span class="chip">시간 제한<b>${cur.timeLimit}초</b></span>
+      <span class="chip">메모리 제한<b>${cur.memoryLimit}MB</b></span>
+      <span class="chip">채점<b>${esc(cur.interpreter || "PyPy3")}</b></span>
+      ${cur.source ? `<span class="chip">기출<b>${esc(cur.source)}</b></span>` : ""}
+      ${cur.link ? `<span class="chip"><a href="${esc(cur.link)}" target="_blank" rel="noopener">원본 문제 ↗</a></span>` : ""}
+    </div>
+    <div class="md">${md}</div>
+    ${samples ? `<div class="sec">예제</div><div class="samples">${samples}</div>` : ""}`;
+  $("#prob").querySelectorAll(".md img").forEach(img => {
+    const src = img.getAttribute("src") || "";
+    if (!/^(https?:|data:|\/)/.test(src)) img.src = `/asset/${cur.id}/${src.replace(/^(\.\/)?img\//, "")}`;
+  });
+  $("#prob").scrollTop = 0;
+  $("#crumb").innerHTML = `${cur.chapter}장 ${esc(cur.chapterName)} › <b>${esc(cur.title)}</b>`;
+  $("#fileName").textContent = fn ? "solution.py — solution 함수" : "solution.py";
+  $("#sbInterp").textContent = "⚙ " + (cur.interpreter || "PyPy3") + (fn ? " · 프로그래머스 환경" : " · 백준 환경");
+  editor.setValue(cur.draft ?? template(cur));
+  editor.clearHistory && editor.clearHistory();
+  editor.focus();
+  $("#dirty").textContent = ""; $("#sbSaved").textContent = "";
+  lastJob = null; showTab("result");
+  if (!exam) startProblemTimer();
+  renderExamBar();
+}
+$("#prob").addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (b){ navigator.clipboard?.writeText(b.dataset.copy); b.textContent = "복사됨"; setTimeout(() => b.textContent = "복사", 1000); return; }
+  if (e.target.matches(".md img")){ const z = document.createElement("div"); z.className = "zoom"; z.innerHTML = `<img src="${e.target.src}">`; z.onclick = () => z.remove(); document.body.appendChild(z); }
+});
+let resetArm = false;
+$("#resetBtn").onclick = () => {
+  if (!cur) return;
+  if (!resetArm && editor.getValue() !== template(cur)){ resetArm = true; $("#resetBtn").textContent = "정말 초기화?"; setTimeout(() => { resetArm = false; $("#resetBtn").textContent = "초기화"; }, 2500); return; }
+  resetArm = false; $("#resetBtn").textContent = "초기화"; editor.setValue(template(cur));
+};
+
+// ---------- 하단 패널 ----------
+document.querySelectorAll(".ptab").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+function showTab(t){
+  tab = t;
+  document.querySelectorAll(".ptab").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
+  const pb = $("#pbody");
+  if (!cur){ pb.innerHTML = ""; return; }
+  if (t === "result"){
+    if (lastJob) renderResult(lastJob.job, lastJob.mode); else pb.innerHTML = '<div class="muted" style="padding-top:8px">코드 실행 결과가 여기에 표시됩니다.</div>';
+  } else if (t === "custom"){
+    if (cur.type === "function"){ pb.innerHTML = '<div class="muted" style="padding-top:8px">함수형 문제는 [코드 실행]으로 예제를 확인하세요. print()로 디버깅 출력을 볼 수 있습니다.</div>'; return; }
+    pb.innerHTML = `<div class="out-lbl">입력</div><textarea class="custom" id="customIn" spellcheck="false">${esc(LS.get("custom:" + cur.id, (cur.samples[0] || {}).input || ""))}</textarea>
+      <div style="margin:6px 0"><button class="btn" id="customRun">이 입력으로 실행</button></div><div id="customOut"></div>`;
+    $("#customRun").onclick = async () => {
+      const input = $("#customIn").value; LS.set("custom:" + cur.id, input);
+      $("#customOut").innerHTML = '<span class="spinner"></span>실행 중...';
+      const r = await api(`/api/run/${cur.id}`, {mode:"custom", code:editor.getValue(), input});
+      $("#customOut").innerHTML = `<div class="detail"><div class="out-lbl">출력 · ${r.time_ms} ms · 종료 코드 ${r.code}</div><pre>${esc(r.stdout) || " "}</pre>${r.stderr ? `<pre class="err">${esc(r.stderr)}</pre>` : ""}</div>`;
+    };
+  } else {
+    const h = (cur.status && cur.status.history) || [];
+    pb.innerHTML = h.length ? `<table class="hist"><tr><th>제출 시각</th><th>결과</th><th>최대 시간</th><th>통과</th></tr>${h.map(r =>
+      `<tr><td>${r.at}</td><td class="v-${r.verdict}">${VNAME[r.verdict]}</td><td>${r.timeMs} ms</td><td>${r.passed}/${r.total}</td></tr>`).join("")}</table>`
+      : '<div class="muted" style="padding-top:8px">아직 제출 기록이 없습니다.</div>';
+  }
+}
+
+// ---------- 실행/채점 ----------
+let running = false;
+async function run(mode){
+  if (!cur || running) return;
+  running = true; $("#runBtn").disabled = $("#submitBtn").disabled = true;
+  const pid = cur.id, code = editor.getValue();
+  api(`/api/draft/${pid}`, {code});
+  showTab("result");
+  $("#pbody").innerHTML = `<div style="padding-top:8px"><span class="spinner"></span>${mode === "submit" ? "채점 준비 중..." : "예제 실행 중..."}</div>`;
+  try {
+    const {job} = await api(`/api/run/${pid}`, {mode, code});
+    let j;
+    while (true){
+      j = await api(`/api/job/${job}`);
+      if (j.finished) break;
+      if (cur.id === pid && tab === "result") $("#pbody").innerHTML = `<div style="padding-top:8px"><span class="spinner"></span>${mode === "submit" ? "채점 중" : "실행 중"} (${j.total ? Math.floor(j.done / j.total * 100) : 0}%)</div>`;
+      await new Promise(r => setTimeout(r, 200));
+    }
+    if (cur.id !== pid) return;
+    lastJob = {job:j, mode};
+    renderResult(j, mode);
+    if (mode === "submit"){
+      await loadList();
+      const fresh = await api(`/api/problem/${pid}`); if (cur.id === pid){ cur.status = fresh.status; }
+      if (j.verdict === "AC" && cur.id === pid){ const s = $("#prob .ph"); if (s && !s.querySelector(".solved")) s.insertAdjacentHTML("beforeend", '<span class="solved">✓ 해결</span>'); }
+      if (exam && j.verdict === "AC"){ exam.solved[pid] = true; LS.set("exam", exam); renderExamBar(); }
+      if (j.git) pollGit(job);
+    }
+  } finally { running = false; $("#runBtn").disabled = $("#submitBtn").disabled = false; }
+}
+function renderResult(j, mode){
+  const v = j.verdict;
+  const failIdx = j.results.findIndex(r => r.status !== "AC");
+  const head = mode === "submit"
+    ? `<div class="verdict v-${v}">${VNAME[v]}${v !== "AC" ? `<small>${j.done}번째 테스트 케이스에서 실패 · 총 ${j.total}개</small>` : `<small>테스트 ${j.total}개 통과 · 최대 ${j.timeMs} ms</small>`}</div>`
+    : `<div class="verdict v-${v}">예제 ${j.results.filter(r => r.status === "AC").length} / ${j.total} 통과${v === "AC" ? "<small>제출해서 숨겨진 테스트까지 확인해 보세요</small>" : ""}</div>`;
+  const chips = `<div class="cases">${j.results.map((r, i) => `<span class="case ${r.status}" data-i="${i}">${r.sample ? "예제 " + (+r.name.slice(1)) : "테스트 " + (+r.name.slice(1))} · ${r.status} · ${r.time_ms}ms</span>`).join("")}</div>`;
+  $("#pbody").innerHTML = head + chips + `<div class="detail" id="detail"></div>` + (j.git ? `<div class="gitline" id="gitLine"><span class="spinner"></span>GitHub에 커밋 중...</div>` : "");
+  const show = i => {
+    const r = j.results[i]; if (!r) return;
+    $("#pbody").querySelectorAll(".case").forEach(c => c.classList.toggle("on", +c.dataset.i === i));
+    let h = "";
+    if (r.got !== undefined) h += `<div class="two"><div><div class="out-lbl">실행 결과</div><pre>${esc(r.got) || " "}</pre></div><div><div class="out-lbl">기댓값</div><pre>${esc(r.expected)}</pre></div></div>`;
+    else if (r.status !== "AC") h += `<div class="muted">숨겨진 테스트 케이스라 입출력은 공개되지 않습니다.${r.status === "TLE" ? " 입력 크기와 시간복잡도를 다시 생각해 보세요." : ""}</div>`;
+    if (r.stderr) h += `<div class="out-lbl">에러</div><pre class="err">${esc(r.stderr)}</pre>`;
+    $("#detail").innerHTML = h;
+  };
+  $("#pbody").querySelectorAll(".case").forEach(c => c.onclick = () => show(+c.dataset.i));
+  show(failIdx >= 0 ? failIdx : (mode === "sample" ? 0 : -1));
+  if (j.git) updateGitLine(j.git);
+}
+function updateGitLine(g){
+  const el = $("#gitLine"); if (!el) return;
+  const sb = $("#sbGit");
+  if (g.state === "pushed"){ el.className = "gitline ok"; el.textContent = "✓ GitHub에 푸시 완료 · " + g.msg; sb.textContent = "⎇ main ✓ 푸시됨"; sb.className = ""; }
+  else if (g.state === "nochange" || g.state === "local"){ el.className = "gitline"; el.textContent = g.msg; }
+  else if (g.state === "committed"){ el.className = "gitline ok"; el.textContent = "✓ " + g.msg; }
+  else if (g.state === "error" || g.state === "push-error"){ el.className = "gitline err"; el.textContent = "✗ " + g.msg; sb.textContent = "⎇ main ✗ 푸시 실패"; sb.className = "git-err"; }
+  else { el.innerHTML = `<span class="spinner"></span>${g.state === "pushing" ? "GitHub에 푸시 중..." : "커밋 중..."}`; sb.textContent = "⎇ main ↻ 동기화 중"; }
+  return !["pending", "pushing"].includes(g.state);
+}
+async function pollGit(job){
+  for (let k = 0; k < 150; k++){
+    const j = await api(`/api/job/${job}`);
+    if (lastJob && lastJob.job.id === job) lastJob.job.git = j.git;
+    if (updateGitLine(j.git)) return;
+    await new Promise(r => setTimeout(r, 700));
+  }
+}
+$("#runBtn").onclick = () => run("sample");
+$("#submitBtn").onclick = () => run("submit");
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey && e.key === "Enter"){ e.preventDefault(); run(e.shiftKey ? "submit" : "sample"); }
+  if (e.ctrlKey && (e.key === "s" || e.key === "S")){ e.preventDefault(); scheduleSave(); }
+  if (e.ctrlKey && (e.key === "b" || e.key === "B")){ e.preventDefault(); toggleSide(); }
+});
+
+// ---------- 타이머 ----------
+let tick = null;
+function fmt(sec){ const s = Math.abs(sec); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), ss = s%60; return (sec < 0 ? "-" : "") + (h ? h + ":" : "") + String(m).padStart(2,"0") + ":" + String(ss).padStart(2,"0"); }
+function startProblemTimer(){
+  clearInterval(tick);
+  const start = Date.now(), limit = (cur.solveMinutes || 0) * 60;
+  $("#timerLabel").textContent = limit ? `풀이 시간 ${cur.solveMinutes}분` : "경과 시간";
+  const upd = () => { const el = Math.floor((Date.now() - start) / 1000); $("#timer").textContent = fmt(el);
+    $("#timerBox").className = "timer" + (limit && el > limit ? " over" : limit && el > limit * .8 ? " warn" : ""); };
+  upd(); tick = setInterval(upd, 1000);
+}
+function startExamTimer(){
+  clearInterval(tick);
+  $("#timerLabel").textContent = "남은 시간";
+  const upd = () => { const left = Math.floor((exam.end - Date.now()) / 1000); $("#timer").textContent = fmt(Math.max(left, 0));
+    $("#timerBox").className = "timer" + (left < 600 ? " over" : left < 1800 ? " warn" : ""); if (left <= 0) endExam(); };
+  upd(); tick = setInterval(upd, 1000);
+}
+
+// ---------- 모의고사 ----------
+function examClick(){ if (exam) endExam(); else $("#examModal").hidden = false; }
+$("#examBtn").onclick = examClick;
+$("#actExam").onclick = examClick;
+$("#exCancel").onclick = () => $("#examModal").hidden = true;
+$("#exStart").onclick = () => {
+  const range = $("#exRange").value, n = Math.max(1, +$("#exCount").value || 4), mins = Math.max(10, +$("#exMin").value || 150);
+  let pool = problems.filter(p => range === "all" || (range === "part3" ? p.chapter >= 11 : p.chapter <= 10));
+  if ($("#exUnsolved").checked){ const un = pool.filter(p => !p.solved); if (un.length >= n) pool = un; }
+  pool = pool.sort(() => Math.random() - .5).slice(0, n).sort((a, b) => (a.chapter - b.chapter) || a.id.localeCompare(b.id, undefined, {numeric:true}));
+  if (!pool.length) return;
+  exam = {ids: pool.map(p => p.id), solved:{}, start: Date.now(), end: Date.now() + mins * 60000};
+  LS.set("exam", exam);
+  $("#examModal").hidden = true;
+  setExamUI(true);
+  startExamTimer();
+  openProblem(exam.ids[0]);
+};
+function setExamUI(on){
+  $("#examBtn").textContent = on ? "시험 종료" : "모의고사";
+  $("#examBtn").classList.toggle("danger", on);
+  $("#actExam").classList.toggle("on", on);
+  if (on && !$("#body").classList.contains("noside")) toggleSide();
+}
+function renderExamBar(){
+  const bar = $("#examBar");
+  if (!exam){ bar.hidden = true; $("#crumb").hidden = false; return; }
+  bar.hidden = false; $("#crumb").hidden = true;
+  bar.innerHTML = exam.ids.map((id, i) => `<button class="${cur && cur.id === id ? "on" : ""} ${exam.solved[id] ? "done" : ""}" data-id="${id}">${i+1}번 문제</button>`).join("");
+  bar.querySelectorAll("button").forEach(b => b.onclick = () => openProblem(b.dataset.id));
+}
+function endExam(){
+  if (!exam) return;
+  clearInterval(tick);
+  const used = Math.floor((Math.min(Date.now(), exam.end) - exam.start) / 1000);
+  const got = exam.ids.filter(id => exam.solved[id]).length;
+  $("#examEndCard").innerHTML = `<h2>모의고사 결과</h2>
+    <div class="verdict ${got === exam.ids.length ? "v-AC" : ""}">${got} / ${exam.ids.length} 문제 해결<small>사용 시간 ${fmt(used)}</small></div>
+    <table>${exam.ids.map((id, i) => { const p = problems.find(x => x.id === id) || {title:id};
+      return `<tr><td>${i+1}번</td><td>${id}. ${esc(p.title)}</td><td class="${exam.solved[id] ? "v-AC" : "v-WA"}">${exam.solved[id] ? "해결" : "미해결"}</td></tr>`; }).join("")}</table>
+    <div class="row"><button class="btn primary" id="exClose">닫기</button></div>`;
+  $("#examEnd").hidden = false;
+  $("#exClose").onclick = () => { $("#examEnd").hidden = true; };
+  exam = null; LS.set("exam", null);
+  setExamUI(false);
+  renderExamBar();
+  if (cur) startProblemTimer();
+}
+
+// ---------- 패널 크기 조절 ----------
+function dragger(el, onMove){
+  el.addEventListener("mousedown", e => {
+    e.preventDefault(); el.classList.add("drag"); document.body.style.cursor = getComputedStyle(el).cursor;
+    const move = ev => { onMove(ev); editor.refresh(); };
+    const up = () => { el.classList.remove("drag"); document.body.style.cursor = ""; document.removeEventListener("mousemove", move); document.removeEventListener("mouseup", up); };
+    document.addEventListener("mousemove", move); document.addEventListener("mouseup", up);
+  });
+}
+dragger($("#vgutter"), ev => { const r = $("#ws").getBoundingClientRect(); const pct = Math.min(75, Math.max(22, (ev.clientX - r.left) / r.width * 100)); $("#ws").style.setProperty("--left", pct + "%"); LS.set("leftPct", pct); });
+dragger($("#hgutter"), ev => { const r = $("#right").getBoundingClientRect(); const h = Math.min(r.height - 160, Math.max(110, r.bottom - ev.clientY)); $("#right").style.setProperty("--panelH", h + "px"); LS.set("panelH", h); });
+{ const l = LS.get("leftPct", null), h = LS.get("panelH", null); if (l) $("#ws").style.setProperty("--left", l + "%"); if (h) $("#right").style.setProperty("--panelH", h + "px"); }
+
+// ---------- 시작 ----------
+(async () => {
+  initEditor();
+  await loadList();
+  if (exam){ if (Date.now() > exam.end) endExam(); else { setExamUI(true); startExamTimer(); } }
+  const first = location.hash.slice(1) || LS.get("last", null) || (problems[0] && problems[0].id);
+  if (first && problems.some(p => p.id === first)) openProblem(first); else showTab("result");
+})();
+</script>
+</body>
+</html>
