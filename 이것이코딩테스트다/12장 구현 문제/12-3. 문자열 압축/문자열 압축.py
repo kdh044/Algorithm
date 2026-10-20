@@ -1,29 +1,21 @@
 def solution(s):
-    answer = len(s)
+    lengths = [len(s)]
 
     for step in range(1, len(s) // 2 + 1):
         compressed = ""
-        prev = s[:step]
+        prev = s[0:step]
         count = 1
 
-        for i in range(step, len(s), step):
-            current = s[i:i + step]
-
-            if current == prev:
+        for j in range(step, len(s), step):
+            if prev == s[j:j + step]:
                 count += 1
             else:
-                if count > 1:
-                    compressed += str(count)
-
-                compressed += prev
-                prev = current
+                compressed += str(count) + prev if count >= 2 else prev
+                prev = s[j:j + step]
                 count = 1
 
-        if count > 1:
-            compressed += str(count)
+        compressed += str(count) + prev if count >= 2 else prev
 
-        compressed += prev
+        lengths.append(len(compressed))
 
-        answer = min(answer, len(compressed))
-
-    return answer
+    return min(lengths)
