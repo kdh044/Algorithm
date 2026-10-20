@@ -1,6 +1,6 @@
 def solution(s):
-    letters = []
     total = 0
+    letters = []
     has_digit = False
     
     for c in s:
@@ -9,6 +9,7 @@ def solution(s):
             has_digit = True
         else:
             letters.append(c)
+    
     letters.sort()
     
     if has_digit:
