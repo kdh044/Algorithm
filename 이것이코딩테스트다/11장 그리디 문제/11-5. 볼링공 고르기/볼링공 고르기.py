@@ -1,7 +1,14 @@
 def solution(n, m, k):
-    answer = 0 
-    for i in range(1, n):
-        for j in range(i):
-            if k[i] != k[j]:
-                answer += 1
+    count = [0] * (m + 1)
+    
+    for weight in k:
+        count[weight] += 1
+    
+    answer = 0
+    remaining = n
+    
+    for i in range(1, m + 1):
+        remaining -= count[i]
+        answer += count[i] * remaining
+        
     return answer
