@@ -8,6 +8,7 @@ def solution(n, fears):
         group += 1
         
         if group >= fear:
-            answer += 1
             group = 0
+            answer += 1
+            
     return answer
