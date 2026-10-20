@@ -1,16 +1,18 @@
 def solution(s):
-    result = []
+    letters = []
     total = 0
+    has_digit = False
 
-    for x in s:
-        if x.isalpha():
-            result.append(x)
+    for c in s:
+        if c in "0123456789":
+            total += int(c)
+            has_digit = True
         else:
-            total += int(x)
+            letters.append(c)
 
-    result.sort()
+    letters.sort()
 
-    if total != 0:
-        result.append(str(total))
+    if has_digit:
+        letters.append(str(total))
 
-    return "".join(result)
+    return "".join(letters)
