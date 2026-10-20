@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![26%](https://progress-bar.xyz/19/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![28%](https://progress-bar.xyz/20/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -16,7 +16,7 @@
 | [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![100%](https://progress-bar.xyz/4/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![0%](https://progress-bar.xyz/0/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
-| [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![16%](https://progress-bar.xyz/1/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
+| [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![33%](https://progress-bar.xyz/2/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
@@ -107,12 +107,12 @@
 
 ## 11장 그리디 문제
 
-![16%](https://progress-bar.xyz/1/?scale=6&title=progress&width=500&color=babaca&suffix=/6)
+![33%](https://progress-bar.xyz/2/?scale=6&title=progress&width=500&color=babaca&suffix=/6)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 11-1 | 모험가 길드 | 핵심 유형 | ✅ | [정답 코드](11%EC%9E%A5%20%EA%B7%B8%EB%A6%AC%EB%94%94%20%EB%AC%B8%EC%A0%9C/11-1.%20%EB%AA%A8%ED%97%98%EA%B0%80%20%EA%B8%B8%EB%93%9C/%EB%AA%A8%ED%97%98%EA%B0%80%20%EA%B8%B8%EB%93%9C.py) |
-| 11-2 | 곱하기 혹은 더하기 | Facebook 인터뷰 | | |
+| 11-2 | 곱하기 혹은 더하기 | Facebook 인터뷰 | ✅ | [정답 코드](11%EC%9E%A5%20%EA%B7%B8%EB%A6%AC%EB%94%94%20%EB%AC%B8%EC%A0%9C/11-2.%20%EA%B3%B1%ED%95%98%EA%B8%B0%20%ED%98%B9%EC%9D%80%20%EB%8D%94%ED%95%98%EA%B8%B0/%EA%B3%B1%ED%95%98%EA%B8%B0%20%ED%98%B9%EC%9D%80%20%EB%8D%94%ED%95%98%EA%B8%B0.py) |
 | 11-3 | [문자열 뒤집기](https://www.acmicpc.net/problem/1439) | 핵심 유형 | | |
 | 11-4 | 만들 수 없는 금액 | K 대회 기출 | | |
 | 11-5 | 볼링공 고르기 | 2019 SW 마에스트로 입학 테스트 | | |
