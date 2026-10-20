@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![36%](https://progress-bar.xyz/26/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![38%](https://progress-bar.xyz/27/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -18,7 +18,7 @@
 | [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![83%](https://progress-bar.xyz/5/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
-| [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
+| [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![12%](https://progress-bar.xyz/1/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [15장 이진 탐색 문제](#15%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [16장 다이나믹 프로그래밍 문제](#16%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
@@ -135,11 +135,11 @@
 
 ## 13장 DFS/BFS 문제
 
-![0%](https://progress-bar.xyz/0/?scale=8&title=progress&width=500&color=babaca&suffix=/8)
+![12%](https://progress-bar.xyz/1/?scale=8&title=progress&width=500&color=babaca&suffix=/8)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
-| 13-1 | [특정 거리의 도시 찾기](https://www.acmicpc.net/problem/18352) | 핵심 유형 | | |
+| 13-1 | [특정 거리의 도시 찾기](https://www.acmicpc.net/problem/18352) | 핵심 유형 | ✅ | [정답 코드](13%EC%9E%A5%20DFSBFS%20%EB%AC%B8%EC%A0%9C/13-1.%20%ED%8A%B9%EC%A0%95%20%EA%B1%B0%EB%A6%AC%EC%9D%98%20%EB%8F%84%EC%8B%9C%20%EC%B0%BE%EA%B8%B0/%ED%8A%B9%EC%A0%95%20%EA%B1%B0%EB%A6%AC%EC%9D%98%20%EB%8F%84%EC%8B%9C%20%EC%B0%BE%EA%B8%B0.py) |
 | 13-2 | [연구소](https://www.acmicpc.net/problem/14502) | 삼성전자 SW 역량테스트 | | |
 | 13-3 | [경쟁적 전염](https://www.acmicpc.net/problem/18405) | 핵심 유형 | | |
 | 13-4 | [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058) | 2020 카카오 신입 공채 1차 | | |
