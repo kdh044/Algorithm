@@ -1,11 +1,12 @@
 def solution(numbers, target):
-    result = [0]
+    
+    answer= [0]
     
     for number in numbers:
         temp = []
-        for x in result:
+        for x in answer:
             temp.append(x + number)
             temp.append(x - number)
-        result = temp
+        answer = temp
         
-    return result.count(target)
+    return answer.count(target)
