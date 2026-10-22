@@ -1,45 +1,37 @@
-import sys
-input = sys.stdin.readline
+def solution(n, m, a, b, d, board):
+    visited = [[0] * m for _ in range(n)]
+    visited[a][b] = 1
 
-n, m = map(int,input().split())
-x, y, direct = map(int,input().split())
-data = [list(map(int,input().split())) for _ in range(n)]
+    dx = [-1, 0, 1, 0]  
+    dy = [0, 1, 0, -1]
 
-visited = [[0] * m for _ in range(n)]
-visited[x][y] = 1
+    answer = 1
+    turn = 0
 
-dx = [-1,0,1,0]
-dy = [0,1,0,-1]
+    while True:
+        d = (d - 1) % 4
 
-def turn_left(direct):
-    return (direct - 1) % 4
+        nx = a + dx[d]
+        ny = b + dy[d]
 
-count = 1
-turn_count = 0
+        if 0 <= nx < n and 0 <= ny < m:
+            if board[nx][ny] == 0 and visited[nx][ny] == 0:
+                a, b = nx, ny
+                visited[a][b] = 1
+                answer += 1
+                turn = 0
+                continue
 
-while True:
-    direct = turn_left(direct)
-    nx = x + dx[direct]
-    ny = y + dy[direct]
-    
-    if visited[nx][ny] == 0 and data[nx][ny] == 0:
-        visited[nx][ny] = 1
-        x = nx
-        y = ny
-        count += 1
-        turn_count = 0
-        continue
-    else:
-        turn_count += 1
-    
-    if turn_count == 4:
-        nx = x - dx[direct]
-        ny = y - dy[direct]
-        
-        if data[nx][ny] == 0:
-            x = nx
-            y = ny
-            turn_count = 0
-        else:
-            break
-print(count)
+        turn += 1
+
+        if turn == 4:
+            nx = a - dx[d]
+            ny = b - dy[d]
+
+            if 0 <= nx < n and 0 <= ny < m and board[nx][ny] == 0:
+                a, b = nx, ny
+                turn = 0
+            else:
+                break
+
+    return answer
