@@ -1,12 +1,14 @@
-import sys
-input = sys.stdin.readline
-
-n,m,k = map(int,input().split())
-nums = list(map(int,input().split()))
-
-nums.sort()
-
-answer = (nums[-1] * k + nums[-2]) * (m // (k + 1))
-answer += nums[-1] * (m % (k + 1))
-
-print(answer)
+def solution(n, m, k, numbers):
+    numbers.sort(reverse = True)
+    answer = 0
+    count = 0
+    
+    for _ in range(m):
+        if count < k:
+            answer += numbers[0]
+            count += 1
+        else:
+            answer += numbers[1]
+            count = 0
+            
+    return answer
