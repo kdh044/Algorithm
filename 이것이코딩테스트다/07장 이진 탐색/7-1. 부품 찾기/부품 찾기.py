@@ -1,14 +1,11 @@
-import sys
-input = sys.stdin.readline
+def solution(n, parts, m, requests):
+    parts = set(parts)
+    answer = []
 
-n = int(input())
-item = set(map(int,input().split()))
+    for r in requests:
+        if r in parts:
+            answer.append("yes")
+        else:
+            answer.append("no")
 
-m = int(input())
-order = list(map(int,input().split()))
-
-for x in order:
-    if x in item:
-        print("yes", end=" ")
-    else:
-        print("no", end=" ")
+    return answer
