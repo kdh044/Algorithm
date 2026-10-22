@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![42%](https://progress-bar.xyz/30/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![43%](https://progress-bar.xyz/31/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -21,7 +21,7 @@
 | [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [15장 이진 탐색 문제](#15%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
-| [16장 다이나믹 프로그래밍 문제](#16%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C) | ![16%](https://progress-bar.xyz/1/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
+| [16장 다이나믹 프로그래밍 문제](#16%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C) | ![33%](https://progress-bar.xyz/2/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [17장 최단 경로 문제](#17%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [18장 그래프 이론 문제](#18%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=5&title=progress&width=300&color=babaca&suffix=/5) |
 | [19장 2020년 상반기 삼성전자 기출문제](#19%EC%9E%A5-2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
@@ -172,12 +172,12 @@
 
 ## 16장 다이나믹 프로그래밍 문제
 
-![16%](https://progress-bar.xyz/1/?scale=6&title=progress&width=500&color=babaca&suffix=/6)
+![33%](https://progress-bar.xyz/2/?scale=6&title=progress&width=500&color=babaca&suffix=/6)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 16-1 | 금광 | Flipkart 인터뷰 | | |
-| 16-2 | [정수 삼각형](https://www.acmicpc.net/problem/1932) | IOI 1994년도 | | |
+| 16-2 | [정수 삼각형](https://www.acmicpc.net/problem/1932) | IOI 1994년도 | ✅ | [정답 코드](16%EC%9E%A5%20%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EB%AC%B8%EC%A0%9C/16-2.%20%EC%A0%95%EC%88%98%20%EC%82%BC%EA%B0%81%ED%98%95/%EC%A0%95%EC%88%98%20%EC%82%BC%EA%B0%81%ED%98%95.py) |
 | 16-3 | [퇴사](https://www.acmicpc.net/problem/14501) | 삼성전자 SW 역량테스트 | ✅ | [정답 코드](16%EC%9E%A5%20%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EB%AC%B8%EC%A0%9C/16-3.%20%ED%87%B4%EC%82%AC/%ED%87%B4%EC%82%AC.py) |
 | 16-4 | [병사 배치하기](https://www.acmicpc.net/problem/18353) | 핵심 유형 | | |
 | 16-5 | 못생긴 수 | Google 인터뷰 | | |
