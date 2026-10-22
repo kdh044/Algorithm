@@ -1,3 +1,2 @@
 def solution(n, numbers):
-    numbers.sort(reverse = True)
-    return numbers
+    return sorted(numbers, reverse = True)
