@@ -1,21 +1,12 @@
 def solution(n, consultations):
-    answer = 0
+    dp = [0] * (n + 1)
 
-    def dfs(day, money):
-        nonlocal answer
+    for i in range(n - 1, -1, -1):
+        t, p = consultations[i]
 
-        if day >= n:
-            answer = max(answer, money)
-            return
+        if i + t <= n:
+            dp[i] = max(dp[i + 1], p + dp[i + t])
+        else:
+            dp[i] = dp[i + 1]
 
-        t, p = consultations[day]
-
-        # 오늘 상담을 하지 않는 경우
-        dfs(day + 1, money)
-
-        # 오늘 상담을 하는 경우
-        if day + t <= n:
-            dfs(day + t, money + p)
-
-    dfs(0, 0)
-    return answer
+    return dp[0]
