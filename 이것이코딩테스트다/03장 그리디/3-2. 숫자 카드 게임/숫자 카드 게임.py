@@ -1,10 +1,11 @@
-import sys
-input = sys.stdin.readline
-n,m = map(int,input().split())
-
-answer = 0
-for i in range(n):
-    data = list(map(int,input().split()))
-    if answer < min(data):
-        answer = min(data)
-print(answer)
+def solution(n, m, cards):
+    answer = []
+    for i in range(n):
+        temp = []
+        for j in range(m):
+            temp.append(cards[i][j])
+        temp.sort()
+        answer.append(temp[0])
+        
+    answer.sort()      
+    return answer[-1]
