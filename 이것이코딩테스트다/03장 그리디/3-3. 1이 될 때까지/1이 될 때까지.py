@@ -1,18 +1,11 @@
-import sys
-input = sys.stdin.readline
-
-n,k = map(int,input().split())
-
-answer = 0
-
-while (n >= k):
-    target = (n // k) * k
-    answer += n - target
-    n = target
-    
-    n //= k
-    answer += 1
-    
-answer += n - 1
-
-print(answer)
+def solution(n, k):
+    answer = 0
+    while n != 1:
+        if n % k == 0:
+            n /= k
+            answer += 1
+        else:
+            n -= 1
+            answer += 1
+            
+    return answer
