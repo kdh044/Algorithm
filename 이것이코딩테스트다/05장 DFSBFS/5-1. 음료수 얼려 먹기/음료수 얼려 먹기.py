@@ -1,34 +1,27 @@
 from collections import deque
-
 def solution(n, m, board):
+    dx = [1,0,-1,0]
+    dy = [0,-1,0,1]
     answer = 0
 
     for i in range(n):
         for j in range(m):
-            if board[i][j] != 0:
-                continue
+            if board[i][j] == 0:
+                q = deque()
+                q.append((i,j))
+                board[i][j] = 1
+                
+                while q:
+                    x ,y = q.popleft()
+                    for d in range(4):
+                        nx = x + dx[d]
+                        ny = y + dy[d]
 
-            answer += 1
-            board[i][j] = 1
-            q = deque([(i, j)])
+                        if 0 <= nx < n and 0 <= ny < m:
+                            if board[nx][ny] == 0:
+                                q.append((nx,ny))
+                                board[nx][ny] = 1
 
-            while q:
-                x, y = q.popleft()
-
-                if x > 0 and board[x-1][y] == 0:
-                    board[x-1][y] = 1
-                    q.append((x-1, y))
-
-                if x+1 < n and board[x+1][y] == 0:
-                    board[x+1][y] = 1
-                    q.append((x+1, y))
-
-                if y > 0 and board[x][y-1] == 0:
-                    board[x][y-1] = 1
-                    q.append((x, y-1))
-
-                if y+1 < m and board[x][y+1] == 0:
-                    board[x][y+1] = 1
-                    q.append((x, y+1))
-
+                answer += 1
+        
     return answer
