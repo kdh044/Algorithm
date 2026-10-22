@@ -1,21 +1,16 @@
-import sys
-input = sys.stdin.readline
-
-dx = [2,2,-2,-2,1,-1,1,-1]
-dy = [1,-1,1,-1,2,2,-2,-2]
-
-n = input()
-
-row = int(n[1])
-col = int(ord(n[0]) - ord("a") + 1)
-
-count = 0
-
-for i in range(8):
-    x = row + dx[i]
-    y = col + dy[i]
+def solution(position):
+    dx = [2,1,-1,-2,-2,-1,1,2]
+    dy = [1,2,2,1,-1,-2,-2,-1]
     
-    if 1 <= x <= 8 and 1 <= y <= 8:
-        count += 1
+    x = ord(position[0]) - ord('a') + 1
+    y = int(position[1])
+    answer = 0
+    
+    for i in range(8):
+        nx = x + dx[i]
+        ny = y + dy[i]
         
-print(count)
+        if 0 < nx <= 8 and 0 < ny <= 8:
+            answer += 1
+            
+    return answer
