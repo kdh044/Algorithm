@@ -5,10 +5,9 @@ def solution(n, m, k):
         count[weight] += 1
     
     answer = 0
-    remaining = n
+    remain = n
     
     for i in range(1, m + 1):
-        remaining -= count[i]
-        answer += count[i] * remaining
-        
+        remain -= count[i]
+        answer += count[i] * remain
     return answer
