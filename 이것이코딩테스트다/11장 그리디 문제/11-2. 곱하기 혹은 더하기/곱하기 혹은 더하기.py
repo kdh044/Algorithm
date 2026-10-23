@@ -1,24 +1,10 @@
 def solution(s):
-    answer = []
-    for i in range(len(s)):
-        c = int(s[i])
-        answer.append(c)
+    init = int(s[0])
     
-    real_answer = 0
-    for d in answer:
-        if d == 0:
-            continue
-        elif d == 1:
-            real_answer += d
+    for num in s[1:]:
+        num = int(num)
+        if init <= 1 or num <= 1:
+            init += num
         else:
-            if real_answer > 1:
-                real_answer *= d
-                
-            elif real_answer == 1:
-                real_answer += d
-                
-            else:
-                real_answer = 1
-                real_answer *= d
-                
-    return real_answer
+            init *= num
+    return init
