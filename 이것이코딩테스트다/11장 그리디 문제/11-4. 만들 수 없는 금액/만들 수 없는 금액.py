@@ -7,5 +7,5 @@ def solution(n, coins):
             break
             
         target += coin
-      
+        
     return target
