@@ -1,10 +1,12 @@
 def solution(s):
-    init = int(s[0])
-    
-    for num in s[1:]:
+    answer = 0
+
+    for num in s:
         num = int(num)
-        if init <= 1 or num <= 1:
-            init += num
+
+        if answer <= 1 or num <= 1:
+            answer += num
         else:
-            init *= num
-    return init
+            answer *= num
+
+    return answer
