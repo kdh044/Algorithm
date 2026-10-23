@@ -23,4 +23,4 @@ def solution(n, m, k, x, roads):
         if dist[i] == k:
             answer.append(i)
             
-    return sorted(answer) if answer else [-1]
+    return answer if answer else [-1]
