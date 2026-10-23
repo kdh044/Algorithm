@@ -12,22 +12,22 @@ def solution(n, k, board, s, x, y):
                 viruses.append((board[i][j],i,j))
     viruses.sort()
     
-    for virus,i,j in viruses:
+    for virus, i,j in viruses:
         q.append((virus,i,j,0))
-    
-    while q:
-        v, i, j ,t = q.popleft()
         
-        if t == s:
+    while q:
+            
+        v,cx,cy,t = q.popleft()
+        if t >= s:
             break
-  
-        for d in range(4):
-            nx = i + dx[d]
-            ny = j + dy[d]
+            
+        for i in range(4):
+            nx = cx + dx[i]
+            ny = cy + dy[i]
             
             if 0 <= nx < n and 0 <= ny < n:
                 if board[nx][ny] == 0:
                     board[nx][ny] = v
-                    q.append((v,nx,ny,t+1))
-                    
+                    q.append((v,nx,ny,t + 1))
+        
     return board[x - 1][y - 1]
