@@ -1,6 +1,6 @@
 def solution(n, coins):
-    coins.sort()
     target = 1
+    coins.sort()
     
     for coin in coins:
         if coin > target:
