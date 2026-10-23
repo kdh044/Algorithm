@@ -1,13 +1,12 @@
+from collections import Counter
+
 def solution(n, m, k):
-    count = [0] * (m + 1)
-    
-    for weight in k:
-        count[weight] += 1
-    
+    count = Counter(k)
     answer = 0
     remain = n
-    
-    for i in range(1, m + 1):
-        remain -= count[i]
-        answer += count[i] * remain
+
+    for weight in sorted(count):
+        remain -= count[weight]
+        answer += count[weight] * remain
+
     return answer
