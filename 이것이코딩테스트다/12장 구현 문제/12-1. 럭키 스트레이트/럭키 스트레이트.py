@@ -1,11 +1,14 @@
 def solution(n):
     n = str(n)
-    left = n[:len(n)//2]
-    right = n[len(n)//2 :]
-    int_left = sum(map(int,left))
-    int_right = sum(map(int,right))
+    mid = len(n) // 2
     
-    if int_left == int_right:
-        return "LUCKY"
+    front = n[:mid]
+    back = n[mid:]
+    
+    int_front = sum(map(int,front))
+    int_back = sum(map(int,back))
+    
+    if int_front == int_back:
+        return("LUCKY")
     else:
-        return "READY"
+        return("READY")
