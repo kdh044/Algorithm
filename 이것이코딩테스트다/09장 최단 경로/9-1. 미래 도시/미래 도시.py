@@ -1,25 +1,34 @@
-def solution(n, m, roads, x, k):
-    INF = int(1e9)
-    graph = [[INF] * (n + 1) for _ in range(n + 1)]
+from collections import deque
 
-    for i in range(1, n + 1):
-        graph[i][i] = 0
+def solution(n, m, roads, x, k):
+    graph = [[] for _ in range(n + 1)]
 
     for a, b in roads:
-        graph[a][b] = 1
-        graph[b][a] = 1
+        graph[a].append(b)
+        graph[b].append(a)
 
-    for mid in range(1, n + 1):
-        for a in range(1, n + 1):
-            for b in range(1, n + 1):
-                graph[a][b] = min(
-                    graph[a][b],
-                    graph[a][mid] + graph[mid][b]
-                )
+    def bfs(start, end):
+        q = deque([start])
+        distance = [-1] * (n + 1)
+        distance[start] = 0
 
-    answer = graph[1][k] + graph[k][x]
+        while q:
+            now = q.popleft()
 
-    if answer >= INF:
+            if now == end:
+                return distance[now]
+
+            for next_node in graph[now]:
+                if distance[next_node] == -1:
+                    distance[next_node] = distance[now] + 1
+                    q.append(next_node)
+
         return -1
 
-    return answer
+    dist1 = bfs(1, k)
+    dist2 = bfs(k, x)
+
+    if dist1 == -1 or dist2 == -1:
+        return -1
+
+    return dist1 + dist2
