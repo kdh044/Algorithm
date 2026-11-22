@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![50%](https://progress-bar.xyz/36/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![52%](https://progress-bar.xyz/37/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -15,7 +15,7 @@
 | [07장 이진 탐색](#07%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [08장 다이나믹 프로그래밍](#08%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D) | ![100%](https://progress-bar.xyz/4/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
-| [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
+| [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![83%](https://progress-bar.xyz/5/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
@@ -97,13 +97,13 @@
 
 ## 10장 그래프 이론
 
-![66%](https://progress-bar.xyz/2/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
+![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=500&color=babaca&suffix=/3)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
 | 10-1 | 팀 결성 | 핵심 유형 | ✅ | [정답 코드](10%EC%9E%A5%20%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0/10-1.%20%ED%8C%80%20%EA%B2%B0%EC%84%B1/%ED%8C%80%20%EA%B2%B0%EC%84%B1.py) |
 | 10-2 | [도시 분할 계획](https://www.acmicpc.net/problem/1647) | 기초 문제집 | ✅ | [정답 코드](10%EC%9E%A5%20%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0/10-2.%20%EB%8F%84%EC%8B%9C%20%EB%B6%84%ED%95%A0%20%EA%B3%84%ED%9A%8D/%EB%8F%84%EC%8B%9C%20%EB%B6%84%ED%95%A0%20%EA%B3%84%ED%9A%8D.py) |
-| 10-3 | 커리큘럼 | 핵심 유형 | | |
+| 10-3 | 커리큘럼 | 핵심 유형 | ✅ | [정답 코드](10%EC%9E%A5%20%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%9D%B4%EB%A1%A0/10-3.%20%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.py) |
 
 ## 11장 그리디 문제
 
