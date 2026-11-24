@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![53%](https://progress-bar.xyz/38/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![54%](https://progress-bar.xyz/39/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -19,7 +19,7 @@
 | [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![100%](https://progress-bar.xyz/6/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
-| [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
+| [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![25%](https://progress-bar.xyz/1/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [15장 이진 탐색 문제](#15%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [16장 다이나믹 프로그래밍 문제](#16%EC%9E%A5-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C) | ![50%](https://progress-bar.xyz/3/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
 | [17장 최단 경로 문제](#17%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
@@ -150,11 +150,11 @@
 
 ## 14장 정렬 문제
 
-![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
+![25%](https://progress-bar.xyz/1/?scale=4&title=progress&width=500&color=babaca&suffix=/4)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
-| 14-1 | [국영수](https://www.acmicpc.net/problem/10825) | 핵심 유형 | | |
+| 14-1 | [국영수](https://www.acmicpc.net/problem/10825) | 핵심 유형 | ✅ | [정답 코드](14%EC%9E%A5%20%EC%A0%95%EB%A0%AC%20%EB%AC%B8%EC%A0%9C/14-1.%20%EA%B5%AD%EC%98%81%EC%88%98/%EA%B5%AD%EC%98%81%EC%88%98.py) |
 | 14-2 | [안테나](https://www.acmicpc.net/problem/18310) | 2019 SW 마에스트로 입학 테스트 | | |
 | 14-3 | [실패율](https://programmers.co.kr/learn/courses/30/lessons/42889) | 2019 카카오 신입 공채 1차 | | |
 | 14-4 | [카드 정렬하기](https://www.acmicpc.net/problem/1715) | 핵심 유형 | | |
