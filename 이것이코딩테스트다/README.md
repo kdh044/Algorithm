@@ -4,7 +4,7 @@
 
 ## 전체 현황
 
-![57%](https://progress-bar.xyz/41/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
+![59%](https://progress-bar.xyz/42/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
 
 | 장 | 진행 |
 | :-- | :-- |
@@ -17,7 +17,7 @@
 | [09장 최단 경로](#09%EC%9E%A5-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C) | ![100%](https://progress-bar.xyz/2/?scale=2&title=progress&width=300&color=babaca&suffix=/2) |
 | [10장 그래프 이론](#10%EC%9E%A5-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0) | ![100%](https://progress-bar.xyz/3/?scale=3&title=progress&width=300&color=babaca&suffix=/3) |
 | [11장 그리디 문제](#11%EC%9E%A5-%EA%B7%B8%EB%A6%AC%EB%94%94-%EB%AC%B8%EC%A0%9C) | ![100%](https://progress-bar.xyz/6/?scale=6&title=progress&width=300&color=babaca&suffix=/6) |
-| [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![50%](https://progress-bar.xyz/4/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
+| [12장 구현 문제](#12%EC%9E%A5-%EA%B5%AC%ED%98%84-%EB%AC%B8%EC%A0%9C) | ![62%](https://progress-bar.xyz/5/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [13장 DFS/BFS 문제](#13%EC%9E%A5-dfsbfs-%EB%AC%B8%EC%A0%9C) | ![37%](https://progress-bar.xyz/3/?scale=8&title=progress&width=300&color=babaca&suffix=/8) |
 | [14장 정렬 문제](#14%EC%9E%A5-%EC%A0%95%EB%A0%AC-%EB%AC%B8%EC%A0%9C) | ![50%](https://progress-bar.xyz/2/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
 | [15장 이진 탐색 문제](#15%EC%9E%A5-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EB%AC%B8%EC%A0%9C) | ![0%](https://progress-bar.xyz/0/?scale=4&title=progress&width=300&color=babaca&suffix=/4) |
@@ -120,7 +120,7 @@
 
 ## 12장 구현 문제
 
-![50%](https://progress-bar.xyz/4/?scale=8&title=progress&width=500&color=babaca&suffix=/8)
+![62%](https://progress-bar.xyz/5/?scale=8&title=progress&width=500&color=babaca&suffix=/8)
 
 | 번호 | 문제 제목 | 출처 | 상태 | 정답 코드 |
 | :--: | :-- | :--: | :--: | :--: |
@@ -128,7 +128,7 @@
 | 12-2 | 문자열 재정렬 | Facebook 인터뷰 | ✅ | [정답 코드](12%EC%9E%A5%20%EA%B5%AC%ED%98%84%20%EB%AC%B8%EC%A0%9C/12-2.%20%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%9E%AC%EC%A0%95%EB%A0%AC/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%9E%AC%EC%A0%95%EB%A0%AC.py) |
 | 12-3 | [문자열 압축](https://programmers.co.kr/learn/courses/30/lessons/60057) | 2020 카카오 신입 공채 | ✅ | [정답 코드](12%EC%9E%A5%20%EA%B5%AC%ED%98%84%20%EB%AC%B8%EC%A0%9C/12-3.%20%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%95%95%EC%B6%95/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%95%95%EC%B6%95.py) |
 | 12-4 | [자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059) | 2020 카카오 신입 공채 | ✅ | [정답 코드](12%EC%9E%A5%20%EA%B5%AC%ED%98%84%20%EB%AC%B8%EC%A0%9C/12-4.%20%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80%20%EC%97%B4%EC%87%A0/%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80%20%EC%97%B4%EC%87%A0.py) |
-| 12-5 | [뱀](https://www.acmicpc.net/problem/3190) | 삼성전자 SW 역량테스트 | | |
+| 12-5 | [뱀](https://www.acmicpc.net/problem/3190) | 삼성전자 SW 역량테스트 | ✅ | [정답 코드](12%EC%9E%A5%20%EA%B5%AC%ED%98%84%20%EB%AC%B8%EC%A0%9C/12-5.%20%EB%B1%80/%EB%B1%80.py) |
 | 12-6 | [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061) | 2020 카카오 신입 공채 | | |
 | 12-7 | [치킨 배달](https://www.acmicpc.net/problem/15686) | 삼성전자 SW 역량테스트 | | |
 | 12-8 | [외벽 점검](https://programmers.co.kr/learn/courses/30/lessons/60062) | 2020 카카오 신입 공채 1차 | | |
