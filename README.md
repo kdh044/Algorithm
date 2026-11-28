@@ -1,7 +1,5 @@
 # 이것이 취업을 위한 코딩 테스트다 with 파이썬
 
-> 나동빈 저, 한빛미디어 · 로컬 채점기(이코테 Judge)에서 모든 테스트를 통과하면 자동으로 커밋됩니다.
-
 ## 전체 현황
 
 ![60%](https://progress-bar.xyz/43/?scale=71&title=progress&width=500&color=babaca&suffix=/71)
